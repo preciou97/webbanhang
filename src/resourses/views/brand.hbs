@@ -1,0 +1,26 @@
+<div class="container-fluid">
+    <div class="mt-200"></div>
+     <div class="mt-200"></div>
+    {{!-- title --}}
+    <div class="title">
+        <div class="text-center">BRAND</div>
+    </div>
+
+    <div class="brand-item">
+
+        <div class="row">
+            {{#each brand}}
+                <div class="col-6 col-sm-6 col-md-6 col-lg-6 col-xl-6  col-2-4  ">
+                    <a href="" class="brand-item-link">
+                        <div class="brand-item-img">
+                            <img src="{{this.link}}" alt="">
+                        </div>
+                    </a>
+                </div>
+            {{/each}}    
+        </div>
+
+
+    </div>
+
+</div>

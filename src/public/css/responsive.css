@@ -1,0 +1,364 @@
+@media (max-width: 575px) {
+  .title {
+    font-size: 40px; }
+  .info_right {
+    font-size: 40px;
+    margin-top: 20px; }
+  .info_left div {
+    font-size: 20px; }
+  .nav_btn_link i {
+    font-size: 55px !important; }
+  .nav-icon-link i {
+    font-size: 60px; }
+  .option-choose-btn {
+    width: 100%;
+    font-size: 40px;
+    padding: 20px 0; }
+  .nav_button_link:hover .menu-notify {
+    display: block; }
+  .nav-list-menu {
+    display: none;
+    order: 4 !important; }
+  .logo {
+    order: 1 !important; }
+  .nav-icon {
+    margin-top: 20px;
+    height: 50px;
+    padding: 0;
+    order: 2 !important; }
+  .navbar-nav {
+    display: block;
+    flex-direction: column !important;
+    align-items: left !important;
+    transform-origin: top center;
+    animation: headerNotify 0.4s ease-in;
+    padding: 0; }
+  .nav-item {
+    width: 100%;
+    display: block;
+    font-size: 20px;
+    border-top: 1px solid #3333;
+    padding-left: 20px;
+    text-align: left; }
+  .nav-item div {
+    font-size: 30px; }
+  .nav-link {
+    display: block;
+    color: #080404 !important;
+    text-decoration: none; }
+  .nav-link:hover {
+    opacity: 0.6;
+    color: #080404; }
+  .nav-icon-link-text {
+    display: none; }
+  .nav-logo img {
+    width: 100px; }
+  .nav-icon-list {
+    margin-right: 35px; }
+  .nav_button {
+    margin-top: 40px;
+    display: block;
+    order: 3 !important; }
+  .nav-logo img {
+    width: 100%; }
+  .nav-icon-ul {
+    justify-content: right;
+    margin-top: 5px; }
+  .footer_row {
+    flex-wrap: wrap-reverse; }
+  .footer_icon_list_ul {
+    justify-content: space-between; }
+  .footer_form_email {
+    display: none; }
+  .footer_form_email_small_sc {
+    display: block; }
+  .footer_form_email_small_sc .footer_form-custom {
+    flex-wrap: wrap; }
+  .footer_form_email_small_sc .footer_form_btn {
+    width: 100%; }
+  .input_button i {
+    font-size: 30px; }
+  .search_form {
+    height: 106px; }
+  .input_button i {
+    margin: 18px 20px 0px 10px;
+    opacity: 0.6; }
+  .search_input {
+    width: 60% !important;
+    border: none; }
+  .mt-200 {
+    padding-top: 125px; }
+  .drop-item {
+    padding: 1.25rem 4rem;
+    font-size: 29px; }
+  .option-choose-dropdown {
+    inset: 235px auto auto 117px !important; }
+  .drop-menu {
+    inset: 235px auto auto 117px !important; } }
+
+@media (min-width: 576px) and (max-width: 767px) {
+  .drop-item {
+    padding: 1.25rem 4rem;
+    font-size: 29px; }
+  .nav_btn_link i {
+    font-size: 55px; }
+  .option-choose-btn {
+    width: 100%;
+    font-size: 16px; }
+  .mt-200 {
+    padding-top: 100px; }
+  .search_form {
+    height: 106px; }
+  .search_input {
+    width: 60% !important;
+    border: none; }
+  .input_button i {
+    margin: 18px 20px 0px 10px;
+    opacity: 0.6; }
+  .nav_button_link:hover .menu-notify {
+    display: block; }
+  .logo {
+    order: 1 !important; }
+  .nav-icon {
+    margin-top: 20px;
+    order: 2 !important; }
+  .nav-list-menu {
+    display: none;
+    order: 4 !important; }
+  .nav-icon-link-text {
+    display: block;
+    width: 90px; }
+  .nav-icon-link i {
+    font-size: 50px; }
+  .nav-logo img {
+    width: 100%; }
+  .nav-icon-list {
+    margin-right: 35px; }
+  .navbar-nav {
+    flex-direction: column !important;
+    align-items: left !important;
+    transform-origin: top center;
+    animation: headerNotify 0.4s ease-in;
+    padding: 0; }
+  .nav-item {
+    text-align: left;
+    width: 100%;
+    display: block;
+    font-size: 20px;
+    border-top: 1px solid #3333;
+    padding-left: 20px; }
+  .nav-item div {
+    font-size: 30px; }
+  .nav-link {
+    display: block;
+    color: #080404 !important;
+    text-decoration: none; }
+  .nav-link:hover {
+    opacity: 0.6;
+    color: #080404; }
+  .nav_button {
+    display: block;
+    margin-top: 20px;
+    order: 3 !important; }
+  .nav-icon-ul {
+    justify-content: right;
+    margin-top: 25px; }
+  .footer_row {
+    flex-wrap: wrap-reverse; }
+  .footer_icon_list_ul {
+    justify-content: space-between; }
+  .footer_form_email {
+    display: none; }
+  .footer_form_input {
+    width: 100%; }
+  .footer_form_email_small_sc {
+    display: block; }
+  .footer_form_email_small_sc .footer_form-custom {
+    flex-wrap: wrap; }
+  .footer_form_email_small_sc .footer_form_btn {
+    width: 100%; }
+  .input_button i {
+    font-size: 50px; } }
+
+@media (min-width: 768px) {
+  .mt-200 {
+    padding-top: 130px; }
+  .logo {
+    order: 1 !important; }
+  .nav-icon {
+    order: 2 !important; }
+  .option-choose-btn {
+    width: 120px;
+    font-size: 16px; }
+  .search_input {
+    width: 60% !important;
+    border: none; }
+  .input_button i {
+    font-size: 50px; }
+  .navbar-menu-sub {
+    display: none; }
+  .nav-list-menu {
+    display: none;
+    order: 4   !important; }
+  .nav-icon-link-text {
+    width: 100%; }
+  .nav-icon {
+    padding: 0;
+    order: 3; }
+  .nav-icon-list {
+    padding: 0 12px;
+    margin-top: 20px; }
+  .nav-icon-link-text {
+    display: block;
+    width: 90px; }
+  .navbar-nav {
+    margin-left: 20px;
+    flex-direction: row !important; }
+  .nav-icon-link i {
+    font-size: 35px; }
+  .nav-icon-ul {
+    justify-content: right;
+    margin-top: 25px; }
+  .nav-item {
+    font-size: 20px;
+    width: 100%; }
+  .nav_button {
+    display: block;
+    margin-top: 20px;
+    order: 3 !important; }
+  .nav_btn_link i {
+    font-size: 40px; }
+  .nav-link {
+    display: block;
+    width: 100%; }
+  .footer_row {
+    flex-wrap: wrap-reverse; }
+  .footer_form_email {
+    display: block; }
+  .footer_form-custom {
+    flex-wrap: wrap; }
+  .footer_form_btn {
+    width: 100%; }
+  .footer_form_email_small_sc {
+    display: none; } }
+
+@media (min-width: 992px) {
+  .option-choose-btn {
+    width: 120px;
+    font-size: 16px; }
+  .navbar-menu-sub {
+    display: none; }
+  .nav-link {
+    display: block;
+    width: 150px;
+    margin-left: 8px; }
+  .nav-list-menu {
+    display: block !important;
+    order: 2 !important; }
+  .nav-icon-link-text {
+    display: block;
+    width: 40px; }
+  .nav-icon-link i {
+    font-size: 35px; }
+  .nav-item {
+    text-align: center;
+    font-size: 20px;
+    font-weight: 500;
+    width: 130px; }
+  .input_button i {
+    font-size: 50px; }
+  .nav_button {
+    display: none; }
+  .footer_form_email {
+    display: block; }
+  .footer_form-custom {
+    flex-wrap: wrap; }
+  .footer_form_btn {
+    width: 100%; }
+  .footer_form_email_small_sc {
+    display: none; }
+  .input_button i {
+    margin-top: 50px;
+    opacity: 0.6; }
+  .mt-200 {
+    padding-top: 120px; } }
+
+@media (min-width: 1200px) {
+  .col-2-4 {
+    flex: 0 0 20%;
+    max-width: 20%;
+    padding: 0 16px; }
+  .option-choose-btn {
+    width: 120px;
+    font-size: 16px; }
+  .navbar-menu-sub {
+    display: none; }
+  .navbar-nav {
+    justify-content: space-around !important; }
+  .nav-link {
+    width: 150px;
+    margin-left: 8px; }
+  .nav-list-menu {
+    display: block;
+    order: 2 !important; }
+  .nav_button {
+    display: none; }
+  .nav-item {
+    text-align: center;
+    font-size: 20px;
+    font-weight: 500;
+    width: 130px; }
+  .nav-icon-ul {
+    margin: 30px 0; }
+  .nav-icon-list {
+    padding: 0 20px; }
+  .nav-icon-link i {
+    font-size: 35px; }
+  .nav-icon-link-text {
+    width: 100%; }
+  .footer_form_email {
+    display: block;
+    min-height: 400px; }
+  .footer_form-custom {
+    flex-wrap: nowrap; }
+  .footer_form_input {
+    margin-top: 8px;
+    margin-right: 0px;
+    border-radius: 0px;
+    font-size: 14px;
+    width: 600px;
+    height: 60px; }
+  .footer_form_btn {
+    margin: 8px 0;
+    padding: 9px 0px;
+    border-radius: 0px !important;
+    font-size: 14px;
+    width: 100px;
+    height: 60px; }
+  .footer_form_email_small_sc {
+    display: none; } }
+
+@media (min-width: 1700px) {
+  .nav-link {
+    width: 180px;
+    margin-left: 8px; }
+  .nav-item {
+    text-align: center;
+    font-size: 25px;
+    font-weight: 500;
+    width: 130px; }
+  .mt-200 {
+    padding-top: 120px; }
+  .option-choose-btn {
+    width: 120px;
+    font-size: 16px; }
+  .search_form {
+    display: none; }
+  .navbar-menu-sub {
+    display: none; }
+  .justify-content-left {
+    justify-content: center; }
+  .nav-icon-link i {
+    font-size: 40px; }
+  .nav-icon-ul {
+    margin: 30px 0; } }

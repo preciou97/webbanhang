@@ -1,0 +1,263 @@
+<div class="footer container-fluid">
+
+    <div class="row footer_row">
+
+        <div class="col-auto col-sm-auto col-md-2 col-lg-2 col-xl-2 ">
+            <ul class="footer_ul">
+                <li class="footer_li"><a class="footer_link" href="">ブランド一覧</a></li>
+                <li class="footer_li"><a class="footer_link" href="">ブログ</a></li>
+                <li class="footer_li"><a class="footer_link" href="">利用規約</a></li>
+                <li class="footer_li"><a class="footer_link" href="">返金ポリシー</a></li>
+            </ul>
+        </div>
+
+        <div class="col-auto col-sm-auto col-md-2 col-lg-2 col-xl-2">
+            <ul class="footer_ul">
+                <li class="footer_li"><a class="footer_link" href="">スタッフ募集</a></li>
+                <li class="footer_li"><a class="footer_link" href="">特定商取引法に基づく表記</a></li>
+                <li class="footer_li"><a class="footer_link" href="">プライバシーポリシー</a></li>
+            </ul>
+        </div>
+
+        <div class="col-4 col-sm-12  offset-md-4  offset-lg-4  offset-xl-4 col-md-4 col-lg-4 col-xl-4">
+
+            <div class="footer_icon_list">
+                <ul class="footer_icon_list_ul d-flex ">
+                    <li class="footer_icon_list_li">
+                        <a class="footer_icon_list_link" href="">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                    </li>
+                    <li class="footer_icon_list_li">
+                        <a class="footer_icon_list_link" href="">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                    </li>
+                    <li class="footer_icon_list_li">
+                        <a class="footer_icon_list_link" href="">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                    </li>
+                    <li class="footer_icon_list_li ">
+                        <a class="footer_icon_list_link" href="">
+                            <img src="https://cdn.shopify.com/s/files/1/0265/8012/3707/files/icon_sumally.png?v=1577083783"
+                                alt="" class="align-baseline sumary">
+                        </a>
+                    </li>
+                    <li class="footer_icon_list_li">
+                        <a class="footer_icon_list_link" href="">
+                            <i class="fab fa-amazon"></i>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="footer_form_email">
+                メールマガジン登録
+                <form class="form footer_form-custom d-flex">
+                    <input type="text" class="form-control footer_form_input" id="inlineFormInputName2"
+                        placeholder="メールアドレス">
+                    <button type="submit" class="btn btn-secondary footer_form_btn">登録する</button>
+                </form>
+            </div>
+
+
+        </div>
+
+
+
+    </div>
+
+    <div class="footer_form_email footer_form_email_small_sc ">
+        メールマガジン登録
+        <form class="form footer_form-custom d-flex">
+            <input type="text" class="form-control footer_form_input"  placeholder="メールアドレス">
+            <button type="submit" class="btn btn-secondary footer_form_btn">登録する</button>
+        </form>
+    </div>
+
+</div>
+
+
+
+
+
+
+
+<script>
+
+    const headerBtn = $('.nav_button');
+    const navbarSearch = $('.search-btn-icon');
+    const inputSearchBtn = $('.input_button_search');
+    const inputClose = $('.input_button_close');
+    const productAttention = $('.product_detail_attention');
+    const productListImg = $('.product_img_list_img');
+    const searchPageBtn = $('.search_page_btn')
+    const searchInput = $('.search_form_hidden');
+    const present = $("#presentCheck");
+    const loginButton = $("#login_btn");
+    const accountIcon = $(".account_icon");
+    const loginIcon = $(".login_icon");
+    const addFavorite = $(".addFavorite");
+    var token = getCookie('token');
+
+
+    if (token != "") {
+        loginIcon.css('display', 'none');
+    } else {
+        accountIcon.css('display', 'none');
+    }
+
+    function deleteCookie(name) {
+        document.cookie = name + '=; Path=/; Expires=Thu, 01 Jan 1970 00:00:01 GMT;';
+    }
+
+
+
+    function setCookie(cname, cvalue, exdays) {
+        const d = new Date();
+        d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
+        let expires = "expires=" + d.toUTCString();
+        document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+    }
+    function getCookie(cname) {
+        let name = cname + "=";
+        let decodedCookie = decodeURIComponent(document.cookie);
+        let ca = decodedCookie.split(';');
+        for (let i = 0; i < ca.length; i++) {
+            let c = ca[i];
+            while (c.charAt(0) == ' ') {
+                c = c.substring(1);
+            }
+            if (c.indexOf(name) == 0) {
+                return c.substring(name.length, c.length);
+            }
+        }
+        return "";
+    }
+
+
+    addFavorite.click(function () {
+        if (token != "") {
+            $.ajax({
+                url: "/account/store",
+                type: "POST",
+                data: {
+                    item: $(this).attr('data-id')
+                }
+            })
+        }else{
+            window.location.href = "/account/login"
+        }
+
+
+    })
+
+    loginButton.click(function () {
+        $.ajax({
+            url: "login/check",
+            type: "POST",
+            data: {
+                username: $('#email_input').val(),
+                password: $('#password_input').val()
+            }
+        })
+            .then(data => {
+                if (data != 'failed') {
+                    console.log(data);
+
+                    setCookie("token", data.token, 1);
+                    window.location.href = "/account/loginSuccess";
+                } else {
+                    window.location.href = "/account/loginFailed";
+                }
+
+            })
+
+
+    })
+
+    present.click(function () {
+        var giftForm = $("#cart_product_gift_form");
+
+        if (present.prop("checked") == true) {
+            present.attr('value', '150');
+            giftForm.submit();
+
+        } else {
+            present.attr('value', '0');
+            giftForm.submit();
+        }
+    })
+
+    headerBtn.click(function (e) {
+        e.preventDefault();
+        var navList = $('.nav-list-menu');
+
+        navList.slideToggle(500);
+
+    })
+    navbarSearch.click(function (e) {
+        e.preventDefault();
+        accountIcon.hide();
+        var body = $('.dark_pane');
+
+        var viewSearch = $('.search_form');
+        if (viewSearch.css('display') == 'none') {
+            viewSearch.slideToggle(500);
+            body.css("opacity", "0.3");
+        } else {
+
+            body.css("opacity", "1");
+        }
+    })
+    inputSearchBtn.click(function (e) {
+        var searchForm = $('.search_form_hidden');
+        var inputSearch = $('.search_input');
+
+        var inputValue = inputSearch.val();
+        searchForm.attr('action', "/search")
+        searchForm.submit();
+    })
+
+    searchPageBtn.click(function (e) {
+        var searchPageInput = $('#form-control-input');
+        var searchPageForm = $('.search_page_form');
+        var searchPageInputValue = searchPageInput.val();
+        searchPageForm.attr('action', "/search")
+        searchPageForm.submit();
+    })
+
+    inputClose.click(function (e) {
+        e.preventDefault();
+        var viewSearch = $('.search_form');
+        var body = $('.dark_pane');
+        viewSearch.slideToggle(500);
+        body.css("opacity", "1");
+
+    })
+
+    productAttention.click(function () {
+        var productAttentionChild = $('.product_detail_attention_detail');
+
+        productAttentionChild.slideToggle(500);
+    })
+
+    productListImg.click(function (e) {
+        e.preventDefault();
+        var productImg = $('.product_image_img');
+
+        productImg.attr("src", $(this).attr("src"));
+    })
+    $(searchInput).keypress(function (e) {
+        var keycode = (e.keyCode ? e.keyCode : e.which);
+        if (keycode == '13') {
+            e.preventDefault();
+            inputSearchBtn.click();
+
+        }
+    });
+
+
+
+</script>

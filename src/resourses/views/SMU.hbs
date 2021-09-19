@@ -1,0 +1,284 @@
+<div class="container-fluid">
+    <div class="mt-200"></div>
+    <div class="mt-200"></div>
+    {{!-- title --}}
+    <div class="title">
+        <div class="text-center">SMU</div>
+    </div>
+    {{!-- info --}}
+    <div class="info d-flex flex-row justify-content-around">
+
+        <div class="info_left d-inline-flex flex-row">
+            <div class="">
+                <div></div>並び替え
+            </div>
+
+            <div>
+
+                <button class="btn btn-light dropdown-toggle option-choose-btn shinchaku-btn" type="button"
+                    id="dropdownMenu2" data-bs-toggle="dropdown" aria-expanded="false">
+                    新着順
+                </button>
+                <div class="dropdown-menu " aria-labelledby="dropdownMenuButton">
+                    <a class="dropdown-item" href="#">ベストセラー</a>
+                    <a class="dropdown-item" href="#">価格の安い順</a>
+                    <a class="dropdown-item" href="#">価格の高い順</a>
+                    <a class="dropdown-item" href="#">アルファベット順, A-Z</a>
+                    <a class="dropdown-item" href="#">アルファベット順, Z-A</a>
+                    <a class="dropdown-item" href="#">新着順</a>
+                    <a class="dropdown-item" href="#">古い商品順</a>
+                </div>
+
+            </div>
+        </div>
+        <div class="info_right">
+            2825個の商品
+        </div>
+    </div>
+
+    {{!-- option-choose --}}
+    <div class="mt-5 option-choose">
+
+        <div class="row">
+
+            {{!-- ブランド --}}
+            <div class="dropdown col-12 col-sm-12 col-md-auto col-lg-auto col-xl-auto col-xxl-auto">
+
+
+                <button class="btn btn-light dropdown-toggle option-choose-btn" type="button" id="dropdownMenu2"
+                    data-bs-toggle="dropdown" aria-expanded="false">
+                    ブランド
+                </button>
+
+                <div class="dropdown-menu  " aria-labelledby="dropdownMenuButton">
+
+
+                    <div class="d-flex flex-row">
+                        <div class="dropdown-item-left">
+                            <a class="dropdown-item" href="#">All</a>
+                            <a class="dropdown-item" href="#">SMU(186)</a>
+                            <a class="dropdown-item" href="#">NIKE SPORTSWEAR(692)</a>
+                            <a class="dropdown-item" href="#">JORDAN BRAND(244)</a>
+                            <a class="dropdown-item" href="#">New Balance(391)</a>
+                            <a class="dropdown-item" href="#">Adidas(310)</a>
+                            <a class="dropdown-item" href="#">Reebok(121)</a>
+                            <a class="dropdown-item" href="#">Puma(283)</a>
+                            <a class="dropdown-item" href="#">ASICS(10)</a>
+                            <a class="dropdown-item" href="#">ASICS SportStyle(166)</a>
+
+                        </div>
+                        <div class="dropdown-item-middle">
+                            <a class="dropdown-item" href="#">Onitsuka Tiger(112)</a>
+                            <a class="dropdown-item" href="#">MIZUNO(61)</a>
+                            <a class="dropdown-item" href="#">Le Coq Sportif(158)</a>
+                            <a class="dropdown-item" href="#">CONVERSE(85)</a>
+                            <a class="dropdown-item" href="#">CONVERSE SKATEBOARDING(18)</a>
+                            <a class="dropdown-item" href="#">HOKA ONE ONE(49)</a>
+                            <a class="dropdown-item" href="#">AIRWALK(13)</a>
+                            <a class="dropdown-item" href="#">Diadora(3)</a>
+                            <a class="dropdown-item" href="#">Hummel(20)</a>
+                            <a class="dropdown-item" href="#">KARHU(3)</a>
+
+                        </div>
+                        <div class="dropdown-item-right">
+                            <a class="dropdown-item" href="#">Umbro(47)</a>
+                            <a class="dropdown-item" href="#">PATRICK(331)</a>
+                            <a class="dropdown-item" href="#">PANTHER(38)</a>
+                            <a class="dropdown-item" href="#">KEEN(22)</a>
+                            <a class="dropdown-item" href="#">Timberland(0)</a>
+                            <a class="dropdown-item" href="#">Ecco(0)</a>
+                            <a class="dropdown-item" href="#">MARQUEE PLAYER(21)</a>
+                        </div>
+                    </div>
+
+
+
+                </div>
+
+
+            </div>
+
+            {{!-- カラー --}}
+            <div class="dropdown col-12 col-sm-12 col-md-auto col-lg-auto col-xl-auto col-xxl-auto">
+
+                <button class="btn btn-light dropdown-toggle option-choose-btn" type="button" id="dropdownMenu2"
+                    data-bs-toggle="dropdown" aria-expanded="false">
+                    カラー
+                </button>
+
+                <div class="dropdown-menu " aria-labelledby="dropdownMenuButton">
+                    <div class="d-flex flex-row">
+                        <div class="color-list-left">
+                            <a class="dropdown-item" href="#">その他(33)</a>
+                            <a class="dropdown-item" href="#">イエロー(4)</a>
+                            <a class="dropdown-item" href="#">オレンジ(1)</a>
+                            <a class="dropdown-item" href="#">グリーン(4)</a>
+                        </div>
+                        <div class="color-list-middle">
+                            <a class="dropdown-item" href="#">グレー(13)</a>
+                            <a class="dropdown-item" href="#">シルバー(1)</a>
+                            <a class="dropdown-item" href="#">パープル(2)</a>
+                            <a class="dropdown-item" href="#">ピンク(1)</a>
+                        </div>
+                        <div class="color-list-right">
+                            <a class="dropdown-item" href="#">ブラック(68)</a>
+                            <a class="dropdown-item" href="#">ブルー(13)</a>
+                            <a class="dropdown-item" href="#">ベージュ(2)</a>
+                            <a class="dropdown-item" href="#">ホワイト(82)</a>
+                            <a class="dropdown-item" href="#">レッド(20)</a>
+                        </div>
+
+
+
+                    </div>
+
+                </div>
+
+
+            </div>
+            {{!-- サイズ --}}
+            <div class="dropdown col-12 col-sm-12 col-md-auto col-lg-auto col-xl-auto col-xxl-auto">
+
+                <button class="btn btn-light dropdown-toggle option-choose-btn" type="button" id="dropdownMenu2"
+                    data-bs-toggle="dropdown" aria-expanded="false">
+                    サイズ
+                </button>
+
+                <div class="dropdown-menu " aria-labelledby="dropdownMenuButton">
+                    <div class="d-flex flex-row">
+                        <div class="size-list-left">
+                            <a class="dropdown-item" href="#">7.0cm(4)</a>
+                            <a class="dropdown-item" href="#">8.0cm(31)</a>
+                            <a class="dropdown-item" href="#">9.0cm(29)</a>
+                            <a class="dropdown-item" href="#">10.0cm(29)</a>
+                            <a class="dropdown-item" href="#">11.0cm(27)</a>
+                            <a class="dropdown-item" href="#">12.0cm(29)</a>
+                            <a class="dropdown-item" href="#">13.0cm(28)</a>
+                            <a class="dropdown-item" href="#">14.0cm(28)</a>
+                            <a class="dropdown-item" href="#">15.0cm(28)</a>
+                            <a class="dropdown-item" href="#">16.0cm(29)</a>
+                            <a class="dropdown-item" href="#">16.5cm(24)</a>
+                            <a class="dropdown-item" href="#">17.0cm(27)</a>
+                        </div>
+                        <div class="size-list-middle">
+                            <a class="dropdown-item" href="#">17.5cm(25)</a>
+                            <a class="dropdown-item" href="#">18.0cm(27)</a>
+                            <a class="dropdown-item" href="#">18.5cm(26)</a>
+                            <a class="dropdown-item" href="#">19.0cm(28)</a>
+                            <a class="dropdown-item" href="#">19.5cm(25)</a>
+                            <a class="dropdown-item" href="#">20.0cm(27)</a>
+                            <a class="dropdown-item" href="#">20.5cm(24)</a>
+                            <a class="dropdown-item" href="#">21.0cm(26)</a>
+                            <a class="dropdown-item" href="#">21.5cm(19)</a>
+                            <a class="dropdown-item" href="#">22.0cm(21)</a>
+                            <a class="dropdown-item" href="#">22.5cm(7)</a>
+                            <a class="dropdown-item" href="#">23.0cm(49)</a>
+                        </div>
+                        <div class="size-list-right">
+                            <a class="dropdown-item" href="#">23.5cm(49)</a>
+                            <a class="dropdown-item" href="#">24.0cm(49)</a>
+                            <a class="dropdown-item" href="#">24.5cm(48)</a>
+                            <a class="dropdown-item" href="#">25.0cm(126)</a>
+                            <a class="dropdown-item" href="#">25.5cm(76)</a>
+                            <a class="dropdown-item" href="#">26.0cm(115)</a>
+                            <a class="dropdown-item" href="#">26.5cm(119)</a>
+                            <a class="dropdown-item" href="#">27.0cm(124)</a>
+                            <a class="dropdown-item" href="#">27.5cm(126)</a>
+                            <a class="dropdown-item" href="#">28.0cm(124)</a>
+                            <a class="dropdown-item" href="#">28.5cm(122)</a>
+                            <a class="dropdown-item" href="#">29.0cm(119)</a>
+                            <a class="dropdown-item" href="#">30.0cm(58)</a>
+                        </div>
+
+                    </div>
+
+
+                </div>
+            </div>
+            {{!-- 在庫 --}}
+            <div class="dropdown col-12 col-sm-12 col-md-auto col-lg-auto col-xl-auto col-xxl-auto">
+
+                <button class="btn btn-light dropdown-toggle option-choose-btn" type="button" id="dropdownMenu2"
+                    data-bs-toggle="dropdown" aria-expanded="false">
+                    在庫
+                </button>
+
+                <div class="dropdown-menu " aria-labelledby="dropdownMenuButton">
+                    <a class="dropdown-item" href="#">在庫あり(13)</a>
+                    <a class="dropdown-item" href="#">完売(231)</a>
+                </div>
+
+
+            </div>
+            {{!-- セール対象 --}}
+            <div class="dropdown col-12 col-sm-12 col-md-auto col-lg-auto col-xl-auto col-xxl-auto">
+
+                <button class="btn btn-light dropdown-toggle option-choose-btn" type="button" id="dropdownMenu2"
+                    data-bs-toggle="dropdown" aria-expanded="false">
+                    セール対象
+                </button>
+
+                <div class="dropdown-menu " aria-labelledby="dropdownMenuButton">
+                    <a class="dropdown-item" href="#">Above 50%(0)</a>
+                    <a class="dropdown-item" href="#">30% - 50%(14)</a>
+                    <a class="dropdown-item" href="#">10% - 30%(31)</a>
+                    <a class="dropdown-item" href="#">Under 10%(0)</a>
+                </div>
+
+
+            </div>
+
+
+        </div>
+
+
+
+
+        <div class="all-item">
+
+            <div class="row">
+                {{#each product}}
+
+                <div class="mt-4 col-6 col-sm-6 col-2-4">
+
+                    <a class="product_detail_link" href="/collections/product/{{this._id}}">
+                        <div class="card" style="width: 100%;">
+                            <img src="https://cdn.shopify.com/s/files/1/0265/8012/3707/products/{{this.img}}-r1_1080x.jpg?v=1631357973"
+                                class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <p class="card-text">{{this.name}}</p>
+                                <div>
+                                    <p>{{this.cost}}円 (税込)</p>
+                                </div>
+                                <button class="btn btn-light btn-custom">{{this.status}}</button>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                {{/each}}
+            </div>
+
+        </div>
+    </div>
+
+    {{!-- PAGINATION --}}
+    <nav aria-label="Page navigation ">
+        <ul class="pagination justify-content-center">
+            <li class="page-item">
+                <a class="page-link" href="#" aria-label="Previous">
+                    <span aria-hidden="true">&laquo;</span>
+                </a>
+            </li>
+            <li class="page-item"><a class="page-link" href="#">1</a></li>
+            <li class="page-item"><a class="page-link" href="#">2</a></li>
+            <li class="page-item"><a class="page-link" href="#">3</a></li>
+            <li class="page-item">
+                <a class="page-link" href="#" aria-label="Next">
+                    <span aria-hidden="true">&raquo;</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+
+
+   

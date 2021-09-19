@@ -1,0 +1,110 @@
+<div class="all_content">
+
+    <div class="div_social">
+        <ul class="social_list d-flex flex-row offset-10">
+            <li class="social_item opa08">
+                <a href="" class="social_link">
+                    <i class="fab fa-twitter-square"></i>
+                </a>
+            </li>
+            <li class="social_item opa08">
+                <a href="" class="social_link">
+                    <i class="fab fa-facebook-square"></i>
+                </a>
+            </li>
+            <li class="social_item opa08">
+                <a href="" class="social_link">
+                    <i class="fab fa-instagram-square"></i>
+                </a>
+            </li>
+        </ul>
+    </div>
+
+    <div class="content">
+
+        <div class="d-flex flex-row justify-content-between  offset-xl-1 col-xl-10">
+            <div class="blog_logo mt-3 opa08">
+                <img src="img/logomitasneakers.png" alt="">
+            </div>
+
+            <div class="link_List mt-3 ">
+                <ul class="link_List_ul d-flex flex-row">
+                    <li class="link_List_li opa08">
+                        <a href="" class="link_List_link">
+                            Blog Top
+                        </a>
+                    </li>
+                    <li class="link_List_li opa08">
+                        <a href="/home" class="link_List_link">
+                            Official Site
+                        </a>
+                    </li>
+                    <li class="link_List_li opa08">
+                        <a href="" class="link_List_link">
+                            Rakuten
+                        </a>
+                    </li>
+                    <li class="link_List_li opa08">
+                        <a href="" class="link_List_link">
+                            Yahoo
+                        </a>
+                    </li>
+                    <li class="link_List_li opa08">
+                        <a href="" class="link_List_link">
+                            Sneaker Resource
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+        </div>
+
+        <div class="info_content offset-xl-2 col-xl-8 opa08">
+            {{#each blogImg}}
+            <div
+                class="info_img d-flex flex-column-reverse flex-sm-column-reverse flex-md-column-reverse flex-lg-column-reverse flex-xl-row opa08">
+                <div class="information">
+                    <div class="infomation_para">
+                        <p class="info_date">
+                            Sat, Sep 11th, 2021 / ＊Recommend Sneaker
+                        </p>
+                        <a href="" class="online_yusen_link">
+                            <h3 class="online_yusen">
+                                【オンライン抽選販売告知】
+                            </h3>
+                        </a>
+                        <p class="info_thank">
+                            【オンライン抽選販売告知】 日頃、「mita sneakers(ミタスニーカーズ)｣をご利用頂き、誠にありがとうございま…
+                        </p>
+                    </div>
+                </div>
+
+                <div class="ima">
+                    <img src="{{this.link}}" alt="blogImg">
+                </div>
+            </div>
+            {{/each}}
+
+        </div>
+
+        <nav aria-label="Page navigation">
+            <ul class="pagination justify-content-center">
+                <li class="page-item">
+                    <a class="page-link blog-page-link" href="#" aria-label="Previous">
+                        <span aria-hidden="true">&laquo;</span>
+                    </a>
+                </li>
+                <li class="page-item"><a class="page-link blog-page-link" href="#">1</a></li>
+                <li class="page-item"><a class="page-link blog-page-link" href="#">2</a></li>
+                <li class="page-item"><a class="page-link blog-page-link" href="#">3</a></li>
+                <li class="page-item">
+                    <a class="page-link blog-page-link" href="#" aria-label="Next">
+                        <span aria-hidden="true">&raquo;</span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+
+    </div>
+
+</div>

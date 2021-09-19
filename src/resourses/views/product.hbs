@@ -1,0 +1,93 @@
+<div class="mt-200"></div>
+<div class="container_fluid">
+    <div class="row mt-5">
+        
+        <div class="product col-12 col-sm-8 col-md-8 col-lg-8 col-xl-8 col-xxl-8">
+            <div class="product_image">
+                <img class="product_image_img" src="https://cdn.shopify.com/s/files/1/0265/8012/3707/products/{{product.img}}-r1_1080x.jpg?v=1631360750" alt="">
+            </div>
+
+            <div class="product_img_list">
+                <ul class="product_img_list row">
+                    <li class="product_img_list_li col-2-4">
+                        <a href="" class="product_img_list_link">
+                            <img class="product_img_list_img" src="https://cdn.shopify.com/s/files/1/0265/8012/3707/products/{{product.img}}-r1_1080x.jpg?v=1631360750" alt="">
+                        </a>
+                    </li>
+                    <li class="product_img_list_li col-2-4">
+                        <a href="" class="product_img_list_link">
+                            <img class="product_img_list_img" src="https://cdn.shopify.com/s/files/1/0265/8012/3707/products/{{product.img}}-r2_1080x.jpg?v=1631360750" alt="">
+                        </a>
+                    </li>
+                    <li class="product_img_list_li col-2-4">
+                        <a href="" class="product_img_list_link">
+                            <img class="product_img_list_img" src="https://cdn.shopify.com/s/files/1/0265/8012/3707/products/{{product.img}}-r3_1080x.jpg?v=1631360750" alt="">
+                        </a>
+                    </li>
+                    <li class="product_img_list_li col-2-4">
+                        <a href="" class="product_img_list_link">
+                            <img class="product_img_list_img" src="https://cdn.shopify.com/s/files/1/0265/8012/3707/products/{{product.img}}-r4_1080x.jpg?v=1631360750" alt="">
+                        </a>
+                    </li>
+                    <li class="product_img_list_li col-2-4">
+                        <a href="" class="product_img_list_link">
+                            <img class="product_img_list_img" src="https://cdn.shopify.com/s/files/1/0265/8012/3707/products/{{product.img}}-r5_1080x.jpg?v=1631360750" alt="">
+                        </a>
+                    </li>
+                    <li class="product_img_list_li col-2-4">
+                        <a href="" class="product_img_list_link">
+                            <img class="product_img_list_img" src="https://cdn.shopify.com/s/files/1/0265/8012/3707/products/{{product.img}}-r6_1080x.jpg?v=1631360750" alt="">
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+       
+        <div class="product_detail col-12 col-sm-4 col-md-4 col-lg-4 col-xl-4 col-xxl-4">
+             <form action="/collections/cart/{{product._id}}" method="get" id="product_form">
+            <h4 class="product_detail_title" >
+                {{product.name}}
+            </h4>
+
+            <p class="product_detail_code">
+                {{product.code}}
+            </p>
+
+            <span class="product_detail_cost" >
+                {{product.cost}}円
+            </span>
+           
+            <div class="form-group product_detail_form">
+                <select class="form-control" id="exampleFormControlSelect1" name="size" >
+                    <option value="26">26</option>
+                    <option value="26.5">26.5</option>
+                    <option value="27">27</option>
+                    <option value="27.5">27.5</option>
+                    <option value="28">28</option>
+                    <option value="28.5">28.5</option>
+                    <option value="29">29</option>
+                </select>
+            </div>
+        
+
+            <input type="number" required value="1" name="num" class="product_detail_quantity_input text-center" >
+
+            </form>
+            <button type="submit" value="submit" form="product_form" class="btn btn-dark product_detail_btn ">カートに追加する</button>
+            <div class="product_detail_attention text-center">
+                必ずお読みください <i class="fas fa-angle-down product_detail_attention_angle-down "></i>
+                <div class="product_detail_attention_detail">
+                    <div class="p1">NIKE商品は通常4営業日以内（離島は除く)にお届けいたしますが、商品の状況によりお時間を頂戴する場合もございます。</div>
+                    <div class="p2">
+                    ※ご予約商品に関しましては、発売日以降の配送希望日時でご対応可能となります。また、納期等の関係により発売日以降のご指定でも一部ご希望に添えない場合も御座いますので予めご了承下さい。 
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        
+    </div>
+
+
+</div>

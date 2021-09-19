@@ -1,0 +1,29 @@
+<div class="container-fluid">
+    <div class="mt-200"></div>
+    <div class="mt-200"></div>
+    {{!-- title --}}
+    <div class="title">
+        <div class="text-center">アカウントを作成する</div>
+    </div>
+
+    <form class="text-center" action="/account/register" method="post">
+         
+         <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label">FULL NAME</label>
+            <input type="text" class="form-control w-50" required id="name_input" name="name">
+        </div>
+        
+        <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label">メールアドレス</label>
+            <input type="email" class="form-control w-50" required id="email_input" name="email">
+        </div>
+        <div class="mb-3">
+            <label for="exampleInputPassword1" class="form-label">パスワード</label>
+            <input type="password" class="form-control w-50" required id="password_input" name="password">
+        </div>
+
+        
+        <button type="submit" class="btn btn-dark">作成する</button>
+
+    </form>
+     <div class="mt-200"></div>

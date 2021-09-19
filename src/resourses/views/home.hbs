@@ -1,0 +1,313 @@
+<div class="container-fluid mt-200"></div>
+
+{{!-- Carousel --}}
+<div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-indicators">
+        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active"
+            aria-current="true" aria-label="Slide 1"></button>
+        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"
+            aria-label="Slide 2"></button>
+        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"
+            aria-label="Slide 3"></button>
+        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="3"
+            aria-label="Slide 4"></button>
+        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="4"
+            aria-label="Slide 5"></button>
+
+    </div>
+    <div class="carousel-inner">
+        <div class="carousel-item active">
+            <img src="/img/slider1.jpg" class="d-block w-100" alt="">
+        </div>
+        <div class="carousel-item">
+            <img src="/img/S221_ML574BA2_Product_UNRETOUCHED_Photography_4_RGB-img_1950x.jpg" class="d-block w-100"
+                alt="">
+        </div>
+        <div class="carousel-item">
+            <img src="/img/P1820196-img_1950x.jpg" class="d-block w-100" alt="">
+        </div>
+        <div class="carousel-item">
+            <img src="/img/mita_top_210906_1950x.jpg" class="d-block w-100" alt="">
+        </div>
+        <div class="carousel-item">
+            <img src="/img/giayloi.jpg" class="d-block w-100" alt="">
+        </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
+        data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+    </button>
+
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators"
+        data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+    </button>
+</div>
+
+
+
+
+
+{{!-- NEW MODELS --}}
+<div class="mt-5 container-fluid">
+
+    <div class="card-title">NEW MODELS</div>
+    <div class="row">
+        {{#each product}}
+
+        <div class="mt-4 col-6 col-sm-6 col-2-4">
+
+            <a class="product_detail_link" href="/collections/product/{{this._id}}">
+                <div class="card" style="width: 100%;">
+                    <img src="https://cdn.shopify.com/s/files/1/0265/8012/3707/products/{{this.img}}-r1_1080x.jpg?v=1631357973"
+                        class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <p class="card-text">{{this.name}}</p>
+                        <div>
+                            <p>{{this.cost}}円</p>
+                        </div>
+                        <button class="btn btn-light btn-custom">{{this.status}}</button>
+                        <a data-id="{{this._id}}" class="btn btn-outline-dark addFavorite">Add to favorite</a>
+                    </div>
+                </div>
+            </a>
+        </div>
+        {{/each}}
+
+
+    </div>
+    <div class="row">
+        <div class="col text-center">
+            <button class="btn btn-link btn-view-all">VIEW ALL</button>
+        </div>
+    </div>
+
+
+</div>
+
+{{!-- RESTOCK --}}
+<div class="mt-5 container-fluid">
+    <div class="card-title">RESTOCK</div>
+    <div class="row">
+        {{#each product}}
+
+        <div class="mt-4 col-6 col-sm-6 col-2-4">
+
+            <a class="product_detail_link" href="/collections/product/{{this._id}}">
+                <div class="card" style="width: 100%;">
+                    <img src="https://cdn.shopify.com/s/files/1/0265/8012/3707/products/{{this.img}}-r1_1080x.jpg?v=1631357973"
+                        class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <p class="card-text">{{this.name}}</p>
+                        <div>
+                            <p>￥16,400 (税込)</p>
+                        </div>
+                        <button class="btn btn-light btn-custom">{{this.status}}</button>
+                    </div>
+                </div>
+            </a>
+        </div>
+        {{/each}}
+
+    </div>
+    <div class="row">
+        <div class="col text-center">
+            <button class="btn btn-link btn-view-all">VIEW ALL</button>
+        </div>
+    </div>
+
+
+</div>
+
+{{!-- INFORMATION --}}
+<div class="mt-5 container-fluid">
+    <div class="card-title">INFORMATION</div>
+
+    <div
+        class="offset-2 offset-sm-2 offset-md-2 offset-lg-2 offset-xl-2 offset-xxl-2 col-8 col-sm-8 col-md-8 col-lg-8 col-xl-8 col-xxl-8 text-center ">
+
+        <div class="information_desc pt-4 pb-4">
+            スタッフ募集
+        </div>
+    </div>
+
+
+    <div
+        class="offset-1 offset-sm-1 offset-md-1 offset-lg-1 offset-xl-1 offset-xxl-1 col-10 col-sm-10 col-md-10 col-lg-10 col-xl-10 col-xxl-10  text-center">
+        <div class="info_contain">
+            <div class="information_img mt-5">
+
+                <img src="/img/imformation_bg.jpg" alt="">
+            </div>
+            <div class="information_text align-middle ">
+                <h1>Back to 95</h1>
+                <p>未来の役割を終えたスニーカーに、未知数の可能性を。</p>
+                <button class="btn btn-link information-btn ">FUTURE</button>
+            </div>
+        </div>
+
+
+
+    </div>
+
+
+</div>
+
+
+{{!-- COLLABORATION --}}
+<div class="mt-5 container-fluid">
+    <div class="card-title">COLLABORATION</div>
+    <div class="row">
+        {{#each product}}
+
+        <div class="mt-4 col-6 col-sm-6 col-2-4">
+
+            <a class="product_detail_link" href="/collections/product/{{this._id}}">
+                <div class="card" style="width: 100%;">
+                    <img src="https://cdn.shopify.com/s/files/1/0265/8012/3707/products/{{this.img}}-r1_1080x.jpg?v=1631357973"
+                        class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <p class="card-text">{{this.name}}</p>
+                        <div>
+                            <p>￥16,400 (税込)</p>
+                        </div>
+                        <button class="btn btn-light btn-custom">{{this.status}}</button>
+                    </div>
+                </div>
+            </a>
+        </div>
+        {{/each}}
+
+    </div>
+    <div class="row">
+        <div class="col text-center">
+            <button class="btn btn-link btn-view-all">VIEW ALL</button>
+        </div>
+    </div>
+
+
+</div>
+
+{{!-- TOP SELLER --}}
+<div class="mt-5 container-fluid">
+    <div class="card-title">TOP SELLER</div>
+    <div class="row">
+        {{#each product}}
+
+        <div class="mt-4 col-6 col-sm-6 col-2-4">
+
+            <a class="product_detail_link" href="/collections/product/{{this._id}}">
+                <div class="card" style="width: 100%;">
+                    <img src="https://cdn.shopify.com/s/files/1/0265/8012/3707/products/{{this.img}}-r1_1080x.jpg?v=1631357973"
+                        class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <p class="card-text">{{this.name}}</p>
+                        <div>
+                            <p>￥16,400 (税込)</p>
+                        </div>
+                        <button class="btn btn-light btn-custom">{{this.status}}</button>
+                    </div>
+                </div>
+            </a>
+        </div>
+        {{/each}}
+
+    </div>
+    <div class="row">
+        <div class="col text-center">
+            <button class="btn btn-link btn-view-all">VIEW ALL</button>
+        </div>
+    </div>
+
+
+</div>
+
+{{!-- LONG SELLER --}}
+<div class="mt-5 container-fluid">
+    <div class="card-title">LONG SELLER</div>
+    <div class="row">
+        {{#each product}}
+
+        <div class="mt-4 col-6 col-sm-6 col-2-4">
+
+            <a class="product_detail_link" href="/collections/product/{{this._id}}">
+                <div class="card" style="width: 100%;">
+                    <img src="https://cdn.shopify.com/s/files/1/0265/8012/3707/products/{{this.img}}-r1_1080x.jpg?v=1631357973"
+                        class="card-img-top" alt="...">
+                    <div class="card-body">
+
+                        <p class="card-text">{{this.name}}</p>
+                        <div>
+                            <p>￥16,400 (税込)</p>
+                        </div>
+                        <button class="btn btn-light btn-custom">{{this.status}}</button>
+                    </div>
+                </div>
+            </a>
+        </div>
+        {{/each}}
+    </div>
+    <div class="row">
+        <div class="col text-center">
+            <button class="btn btn-link btn-view-all">VIEW ALL</button>
+        </div>
+    </div>
+
+
+</div>
+
+
+{{!-- SALE --}}
+<div class="mt-5 container-fluid">
+    <div class="card-title">SALE</div>
+    <div class="row">
+        {{#each product}}
+
+        <div class="mt-4 col-6 col-sm-6 col-2-4">
+
+            <a class="product_detail_link" href="/collections/product/{{this._id}}">
+                <div class="card" style="width: 100%;">
+                    <img src="https://cdn.shopify.com/s/files/1/0265/8012/3707/products/{{this.img}}-r1_1080x.jpg?v=1631357973"
+                        class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <p class="card-text">{{this.name}}</p>
+                        <div>
+                            <p>￥16,400 (税込)</p>
+                        </div>
+                        <button class="btn btn-light btn-custom">{{this.status}}</button>
+                    </div>
+                </div>
+            </a>
+        </div>
+        {{/each}}
+
+    </div>
+    <div class="row">
+        <div class="col text-center">
+            <button class="btn btn-link btn-view-all">VIEW ALL</button>
+        </div>
+    </div>
+
+
+</div>
+
+{{!-- BRAND --}}
+<div class="mt-5 container-fluid">
+    <div class="card-title">BRAND</div>
+    <div class="row justify-content-center">
+                {{#each brand}}
+
+        <div class="col-6 col-sm-6 col-md-6 col-8-1">
+
+                <div class="card" style="width: 100%;">
+                    <img src="{{this.link}}" class="card-img-top" alt="...">
+                </div>
+
+        </div>
+                {{/each}}
+
+
+    </div>
+</div>

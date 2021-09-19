@@ -1,0 +1,31 @@
+<div class="mt-200"></div>
+<div class="mt-200"></div>
+<h1>ようこそ　{{account.name}}</h1>
+<a class="btn btn-outline-secondary" href="/home" onclick="deleteCookie('token')">ログアウト</a>
+
+
+<table class="table table-hover table-sm text-center">
+  <thead>
+    <tr>
+      <th scope="col" style="width:10%">#</th>
+      <th scope="col" style="width:20%"></th>
+      <th scope="col" style="width:60%">商品名</th>
+      <th scope="col" style="width:10%"></th>
+    </tr>
+  </thead>
+  <tbody>
+      {{#each product}}
+    <tr>
+      <th scope="row">{{plus @index 1}}</th>
+      <td>
+          <img src="https://cdn.shopify.com/s/files/1/0265/8012/3707/products/{{this.img}}-r1_1080x.jpg?v=1631357973" width="200px" height="100px"alt="">
+      </td>
+      <td>{{this.name}}</td>
+      <td>
+        <a href="#" class="btn btn-outline-success addToCart-btn">Add to cart</a>
+        <a href="#" class="btn btn-outline-danger deleteFromFavorite-btn">Delete</a>
+      </td>
+    </tr>
+    {{/each}}
+  </tbody>
+</table>
