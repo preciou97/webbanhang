@@ -3,7 +3,7 @@ var router = express.Router()
 
 var AccountController = require('../app/controllers/AccountController')
 
-
+router.patch('/store/delete',AccountController.editItem)
 router.get('/loginFailed',AccountController.loginFailed)
 router.get('/loginSuccess',AccountController.loginSuccess)
 router.post('/store',AccountController.addItem)

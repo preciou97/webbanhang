@@ -55,7 +55,7 @@
 
     <div class="card-title">NEW MODELS</div>
     <div class="row">
-        {{#each product}}
+        {{#each newmodel}}
 
         <div class="mt-4 col-6 col-sm-6 col-2-4">
 
@@ -66,10 +66,11 @@
                     <div class="card-body">
                         <p class="card-text">{{this.name}}</p>
                         <div>
-                            <p>{{this.cost}}円</p>
+                            <p>{{this.cost}}円(税込)</p>
                         </div>
-                        <button class="btn btn-light btn-custom">{{this.status}}</button>
-                        <a data-id="{{this._id}}" class="btn btn-outline-dark addFavorite">Add to favorite</a>
+                        <button class="btn btn-light    ">{{this.status}}</button>
+                        <a data-id="{{this._id}}" class="btn btn-outline-dark addFavorite">お気に入り</a>
+                        <div class="addSuccess">カートに入れました</div>
                     </div>
                 </div>
             </a>
@@ -91,25 +92,29 @@
 <div class="mt-5 container-fluid">
     <div class="card-title">RESTOCK</div>
     <div class="row">
-        {{#each product}}
+        {{#each restock}}
 
         <div class="mt-4 col-6 col-sm-6 col-2-4">
 
             <a class="product_detail_link" href="/collections/product/{{this._id}}">
                 <div class="card" style="width: 100%;">
-                    <img src="https://cdn.shopify.com/s/files/1/0265/8012/3707/products/{{this.img}}-r1_1080x.jpg?v=1631357973"
+                    <img src="https://cdn.shopify.com/s/files/1/0265/8012/3707/products/{{this.img}}-r1_720x.jpg"
                         class="card-img-top" alt="...">
                     <div class="card-body">
                         <p class="card-text">{{this.name}}</p>
                         <div>
-                            <p>￥16,400 (税込)</p>
+                            <p>{{this.cost}}円(税込)</p>
                         </div>
-                        <button class="btn btn-light btn-custom">{{this.status}}</button>
+                        <button class="btn btn-light    ">{{this.status}}</button>
+                        <a data-id="{{this._id}}" class="btn btn-outline-dark addFavorite">お気に入り</a>
+                        <div class="addSuccess">お気に入れました</div>
                     </div>
                 </div>
             </a>
         </div>
         {{/each}}
+
+
 
     </div>
     <div class="row">
@@ -160,7 +165,7 @@
 <div class="mt-5 container-fluid">
     <div class="card-title">COLLABORATION</div>
     <div class="row">
-        {{#each product}}
+        {{#each collaboration}}
 
         <div class="mt-4 col-6 col-sm-6 col-2-4">
 
@@ -171,14 +176,18 @@
                     <div class="card-body">
                         <p class="card-text">{{this.name}}</p>
                         <div>
-                            <p>￥16,400 (税込)</p>
+                            <p>{{this.cost}}円(税込)</p>
                         </div>
-                        <button class="btn btn-light btn-custom">{{this.status}}</button>
+                        <button class="btn btn-light    ">{{this.status}}</button>
+                        <a data-id="{{this._id}}" class="btn btn-outline-dark addFavorite">お気に入り</a>
+                        <div class="addSuccess">カートに入れました</div>
                     </div>
                 </div>
             </a>
         </div>
         {{/each}}
+
+
 
     </div>
     <div class="row">
@@ -194,7 +203,7 @@
 <div class="mt-5 container-fluid">
     <div class="card-title">TOP SELLER</div>
     <div class="row">
-        {{#each product}}
+        {{#each topseller}}
 
         <div class="mt-4 col-6 col-sm-6 col-2-4">
 
@@ -205,14 +214,18 @@
                     <div class="card-body">
                         <p class="card-text">{{this.name}}</p>
                         <div>
-                            <p>￥16,400 (税込)</p>
+                            <p>{{this.cost}}円(税込)</p>
                         </div>
-                        <button class="btn btn-light btn-custom">{{this.status}}</button>
+                        <button class="btn btn-light    ">{{this.status}}</button>
+                        <a data-id="{{this._id}}" class="btn btn-outline-dark addFavorite">お気に入り</a>
+                        <div class="addSuccess">カートに入れました</div>
                     </div>
                 </div>
             </a>
         </div>
         {{/each}}
+
+
 
     </div>
     <div class="row">
@@ -228,7 +241,7 @@
 <div class="mt-5 container-fluid">
     <div class="card-title">LONG SELLER</div>
     <div class="row">
-        {{#each product}}
+        {{#each longseller}}
 
         <div class="mt-4 col-6 col-sm-6 col-2-4">
 
@@ -240,7 +253,7 @@
 
                         <p class="card-text">{{this.name}}</p>
                         <div>
-                            <p>￥16,400 (税込)</p>
+                            <p>{{this.cost}}円</p>
                         </div>
                         <button class="btn btn-light btn-custom">{{this.status}}</button>
                     </div>
@@ -263,7 +276,7 @@
 <div class="mt-5 container-fluid">
     <div class="card-title">SALE</div>
     <div class="row">
-        {{#each product}}
+        {{#each sale}}
 
         <div class="mt-4 col-6 col-sm-6 col-2-4">
 
@@ -274,14 +287,18 @@
                     <div class="card-body">
                         <p class="card-text">{{this.name}}</p>
                         <div>
-                            <p>￥16,400 (税込)</p>
+                            <p>{{this.cost}}円(税込)</p>
                         </div>
-                        <button class="btn btn-light btn-custom">{{this.status}}</button>
+                        <button class="btn btn-light    ">{{this.status}}</button>
+                        <a data-id="{{this._id}}" class="btn btn-outline-dark addFavorite">お気に入り</a>
+                        <div class="addSuccess">カートに入れました</div>
                     </div>
                 </div>
             </a>
         </div>
         {{/each}}
+
+
 
     </div>
     <div class="row">

@@ -197,7 +197,9 @@
     color: black;
     text-decoration: underline;
 }
-
+.addSuccess{
+    display: none;
+}
 // ------- information ------------
 
 .information_desc {
@@ -648,4 +650,12 @@ body {
 
 .shop_info_sonota p{
     font-size:15px;
+}
+
+// store 
+.addToCart-btn,.deleteFromFavorite-btn,.storeImg{
+   margin-top: 8px;
+}
+.storeName{
+    
 }

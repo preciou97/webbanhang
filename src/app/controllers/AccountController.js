@@ -107,7 +107,24 @@ class AccountController {
       })
       .catch(next)
    }
+
+   editItem(req, res, next) {
+      var token = req.cookies.token;
+      var kq = jwt.verify(token, 'mk');
+      userDB.findOneAndUpdate({ _id: kq._id }, {
+         $pull: { 'item' : req.body.item }
+       })
+      
+      .then(()=>{
+         res.render("accountView/store");
+      })
+      .catch(next)
+         
+   }
+
 }
+
+
 
 module.exports = new AccountController()
 // 

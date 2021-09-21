@@ -176,6 +176,9 @@
   color: black;
   text-decoration: underline; }
 
+.addSuccess {
+  display: none; }
+
 .information_desc {
   font-size: 30px;
   border-top: #b6abab solid 1px;
@@ -553,3 +556,6 @@ body {
 
 .shop_info_sonota p {
   font-size: 15px; }
+
+.addToCart-btn, .deleteFromFavorite-btn, .storeImg {
+  margin-top: 8px; }

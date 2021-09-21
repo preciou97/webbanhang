@@ -4,13 +4,13 @@
 <a class="btn btn-outline-secondary" href="/home" onclick="deleteCookie('token')">ログアウト</a>
 
 
-<table class="table table-hover table-sm text-center">
-  <thead>
+<table class="table text-center">
+  <thead class="thead-light">
     <tr>
       <th scope="col" style="width:10%">#</th>
       <th scope="col" style="width:20%"></th>
-      <th scope="col" style="width:60%">商品名</th>
-      <th scope="col" style="width:10%"></th>
+      <th scope="col" style="width:50%">商品名</th>
+      <th scope="col" style="width:20%"></th>
     </tr>
   </thead>
   <tbody>
@@ -18,14 +18,34 @@
     <tr>
       <th scope="row">{{plus @index 1}}</th>
       <td>
-          <img src="https://cdn.shopify.com/s/files/1/0265/8012/3707/products/{{this.img}}-r1_1080x.jpg?v=1631357973" width="200px" height="100px"alt="">
+          <img src="https://cdn.shopify.com/s/files/1/0265/8012/3707/products/{{this.img}}-r1_1080x.jpg?v=1631357973" width="200px" height="100px" class ="storeImg" alt="">
       </td>
-      <td>{{this.name}}</td>
+      <td ><div class="storeName">{{this.name}}</div></td>
       <td>
-        <a href="#" class="btn btn-outline-success addToCart-btn">Add to cart</a>
-        <a href="#" class="btn btn-outline-danger deleteFromFavorite-btn">Delete</a>
+        <a href="/collections/product/{{this._id}}" class="btn btn-outline-success addToCart-btn">カートに入れる</a>
+        <button class="btn btn-outline-danger deleteFromFavorite-btn" data-id="{{this._id}}" id="deleteFormCartBtn" data-bs-toggle="modal" data-bs-target="#deleteModal">削除</button>
       </td>
     </tr>
     {{/each}}
   </tbody>
 </table>
+
+
+<!-- Modal -->
+<div class="modal fade" id="deleteModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Delete</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        本当に削除しますか？
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">いいえ</button>
+        <button type="button" class="btn btn-danger" id="modalDeleteBtn">はい</button>
+      </div>
+    </div>
+  </div>
+</div>
