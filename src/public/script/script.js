@@ -11,11 +11,24 @@ const loginButton = $("#login_btn");
 const accountIcon = $(".account_icon");
 const loginIcon = $(".login_icon");
 const addFavorite = $(".addFavorite");
+const productDetailBtn = $(".product_detail_btn");
 var token = getCookie('token');
 
-
+productDetailBtn.click(function(){
+    $.ajax({
+        url: '/account/addToCart',
+        type: 'POST',
+        data: {
+            size:$('.addToCartSize option:selected').val(),
+            num: $('.addToCartNum').val(),
+            id:$('.addToCartId').val() 
+        }
+    })
+    var addCartSuccess = $('.addCartSuccess')
+    addCartSuccess.slideToggle(500);
+    addCartSuccess.slideToggle(1500);
+})
 $('#deleteModal').on('shown.bs.modal', function () {
-    console.log('aaaaaaa');
 
     let modalDeleteBtn = $('#modalDeleteBtn');
     modalDeleteBtn.click(function () {
@@ -23,6 +36,7 @@ $('#deleteModal').on('shown.bs.modal', function () {
             url: "/account/store/delete",
             type: "PATCH",
             data: {
+                
                 item: $('#deleteFormCartBtn').attr('data-id')
             },
 
@@ -32,6 +46,32 @@ $('#deleteModal').on('shown.bs.modal', function () {
         window.location.reload();
     })
 });
+
+$('.deleteFromCartBtn').click(function (e) {
+    let a = $(this);
+    
+    $('#deleteModalOnCart').on('shown.bs.modal', function (e) {
+            $('#modalDeleteOnCartBtn').click(function (){
+                $.ajax({
+                    url: "/account/cart/delete",
+                    type: "PATCH",
+                    data: {
+                        size:a.attr('data-size'),
+                        num: a.attr('data-num'),
+                        item: a.attr('data-id')
+                    }
+                    
+                })
+                
+                $('#deleteModalOnCart').modal('hide');
+                window.location.reload();
+            })
+           
+    
+    })
+})
+
+
 
 if (token != "") {
     loginIcon.css('display', 'none');
@@ -109,18 +149,22 @@ loginButton.click(function () {
 
 
 })
+   
 
-present.click(function () {
-    var giftForm = $("#cart_product_gift_form");
+    
 
-    if (present.prop("checked") == true) {
-        present.attr('value', '150');
-        giftForm.submit();
 
-    } else {
-        present.attr('value', '0');
-        giftForm.submit();
+present.click(function (e) {
+    var a = $('.total_cost').text();
+    if(present.is(":checked")) {
+        
+        var plus = parseInt(a)+150;
+        $('.total_cost').html(plus + '円');
+    }else{
+        var plus = parseInt(a)-150;
+        $('.total_cost').html(plus + '円'); 
     }
+    
 })
 
 headerBtn.click(function (e) {

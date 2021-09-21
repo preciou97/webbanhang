@@ -44,7 +44,7 @@
         </div>
        
         <div class="product_detail col-12 col-sm-4 col-md-4 col-lg-4 col-xl-4 col-xxl-4">
-             <form action="/collections/cart/{{product._id}}" method="get" id="product_form">
+             
             <h4 class="product_detail_title" >
                 {{product.name}}
             </h4>
@@ -58,7 +58,7 @@
             </span>
            
             <div class="form-group product_detail_form">
-                <select class="form-control" id="exampleFormControlSelect1" name="size" >
+                <select class="form-control addToCartSize" id="exampleFormControlSelect1">
                     <option value="26">26</option>
                     <option value="26.5">26.5</option>
                     <option value="27">27</option>
@@ -69,11 +69,12 @@
                 </select>
             </div>
         
+            <input value="{{product._id}}" class="addToCartId" style="display:none" >
+            <input type="number" required value="1" name="num" class="product_detail_quantity_input text-center addToCartNum" >
 
-            <input type="number" required value="1" name="num" class="product_detail_quantity_input text-center" >
-
-            </form>
+            
             <button type="submit" value="submit" form="product_form" class="btn btn-dark product_detail_btn ">カートに追加する</button>
+            <p style="display: none;"　class="addCartSuccess">カートに追加された</p>
             <div class="product_detail_attention text-center">
                 必ずお読みください <i class="fas fa-angle-down product_detail_attention_angle-down "></i>
                 <div class="product_detail_attention_detail">

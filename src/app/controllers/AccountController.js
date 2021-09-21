@@ -7,13 +7,13 @@ class AccountController {
 
    loginSuccess(req, res, next) {
       var token = req.cookies.token;
-      var kq = jwt.verify(token,'mk');
-      
-      userDB.findOne({_id : kq._id}).lean()
-      .then(account => {
-         res.render('./accountView/loginSuccess',{account})
-      })
-     
+      var kq = jwt.verify(token, 'mk');
+
+      userDB.findOne({ _id: kq._id }).lean()
+         .then(account => {
+            res.render('./accountView/loginSuccess', { account })
+         })
+
    }
 
 
@@ -21,26 +21,26 @@ class AccountController {
       res.render('./accountView/loginFailed')
    }
    checkToken(req, res, next) {
-      
+
       var token = req.cookies.token;
-      var kq = jwt.verify(token,'mk');
-        
-      if(kq){
+      var kq = jwt.verify(token, 'mk');
+
+      if (kq) {
          next();
-      }else{
+      } else {
          this.login();
       }
    }
    store(req, res, next) {
       var token = req.cookies.token;
-      var kq = jwt.verify(token,'mk');
-      userDB.findOne({_id : kq._id}).lean()
+      var kq = jwt.verify(token, 'mk');
+      userDB.findOne({ _id: kq._id }).lean()
          .then(account => {
-            ProductDB.find({_id: {$in : account.item}}).lean()
-            .then(product => {
-               res.render('./accountView/store',{product,account})
-            })
-            .catch(next)
+            ProductDB.find({ _id: { $in: account.item } }).lean()
+               .then(product => {
+                  res.render('./accountView/store', { product, account })
+               })
+               .catch(next)
          })
          .catch(next)
    }
@@ -56,19 +56,19 @@ class AccountController {
 
       userDB.findOne({ username: username, password: password }).lean()
          .then(account => {
-           
-            
+
+
             if (account) {
-              let token = jwt.sign({_id:account._id},'mk')
-               res.json({ token: token})
-               
-            }else{
+               let token = jwt.sign({ _id: account._id }, 'mk')
+               res.json({ token: token })
+
+            } else {
                res.json('failed')
             }
          })
-         
+
    }
-   
+
    showRegister(req, res, next) {
       res.render('./accountView/register');
    }
@@ -95,33 +95,109 @@ class AccountController {
 
    addItem(req, res, next) {
       var token = req.cookies.token;
-      var kq = jwt.verify(token,'mk');
-      
-      
-       userDB.updateOne(
-          {_id:kq._id},
-          { $addToSet:  req.body  }
-       ).lean()
-      .then(account => {
-         res.redirect('/home')
-      })
-      .catch(next)
+      var kq = jwt.verify(token, 'mk');
+
+
+      userDB.updateOne(
+         { _id: kq._id },
+         { $addToSet: req.body }
+      ).lean()
+         .then(account => {
+            res.redirect('/home')
+         })
+         .catch(next)
    }
 
    editItem(req, res, next) {
       var token = req.cookies.token;
       var kq = jwt.verify(token, 'mk');
       userDB.findOneAndUpdate({ _id: kq._id }, {
-         $pull: { 'item' : req.body.item }
-       })
-      
-      .then(()=>{
-         res.render("accountView/store");
+         $pull: { 'item': req.body.item }
       })
-      .catch(next)
-         
+
+         .then(() => {
+            res.render("accountView/store");
+         })
+         .catch(next)
+
    }
 
+
+   showCart(req, res, next) {
+
+      var token = req.cookies.token;
+      var kq = jwt.verify(token, 'mk', (err, decoded) => {
+         if (decoded) {
+            return decoded;
+         }
+         if (err) {
+
+            res.redirect('/account/login');
+         }
+
+      });
+      userDB.find({ _id: kq._id }).lean()
+         .then(account => {
+
+            let productIDs = [];
+            let productSizeAndNum = [];
+
+
+            account[0].cart.map((prod, index) => {
+               productIDs.push(prod.id);
+               productSizeAndNum.push(
+                  {
+                     size: prod.size,
+                     num: prod.num
+                  }
+               )
+            })
+            ProductDB.find({ _id: { $in: productIDs } }).lean()
+               .then(products => {
+                  
+                  let product = [];
+                  products.map((prod, index) => {
+                     product.push({ ...prod, ...productSizeAndNum[index] });
+                  })
+                  
+                  var totalCost = (product.reduce((pre, curr) =>{
+                     return pre + curr.num * curr.costNum;  
+                  },0)); 
+                  
+                  
+                  var totalCostObj = {totalCost}
+                  return res.render('accountView/cart', { product, account, totalCostObj})
+               })
+         })
+         .catch(err => {
+            return res.json(err)
+         })
+   }
+   addToCart(req, res, next) {
+      
+      var token = req.cookies.token;
+      var kq = jwt.verify(token, 'mk');
+      userDB.findOneAndUpdate({ _id: kq._id }, {
+         $push: { 'cart': req.body }
+      })
+         .then(() => {
+            res.json('OK');
+         })
+         .catch(next)
+   }
+   deleteFromCart(req, res, next){
+      var token = req.cookies.token;
+      var kq = jwt.verify(token, 'mk');
+      
+      userDB.findOneAndUpdate({ _id: kq._id }, {
+         $pull: { 'cart' : {id : req.body.item, num: req.body.num, size: req.body.size} }
+      })
+
+         .then(() => {
+            res.render("accountView/store");
+         })
+         .catch(next)
+   }
 }
 
 

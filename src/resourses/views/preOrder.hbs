@@ -1,6 +1,6 @@
 <div class="container-fluid">
     <div class="mt-200"></div>
-     <div class="mt-200"></div>
+    <div class="mt-200"></div>
     {{!-- title --}}
     <div class="title">
         <div class="text-center">PRE-ORDER</div>
@@ -238,7 +238,7 @@
 
             <div class="row">
 
-                {{#each product}}
+                {{#each preoder}}
 
                 <div class="mt-4 col-6 col-sm-6 col-2-4">
 
@@ -249,9 +249,11 @@
                             <div class="card-body">
                                 <p class="card-text">{{this.name}}</p>
                                 <div>
-                                    <p>{{this.cost}}円 (税込)</p>
+                                    <p>{{this.cost}}円(税込)</p>
                                 </div>
-                                <button class="btn btn-light btn-custom">{{this.status}}</button>
+                                <button class="btn btn-light">{{this.status}}</button>
+                                <a data-id="{{this._id}}" class="btn btn-outline-dark addFavorite">お気に入り</a>
+                                <div class="addSuccess">カートに入れました</div>
                             </div>
                         </div>
                     </a>

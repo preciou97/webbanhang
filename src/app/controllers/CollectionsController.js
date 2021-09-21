@@ -1,7 +1,9 @@
 const ProductDB = require('../model/product_model')
 const BrandDB = require('../model/brand_model')
 const BlogImgDB = require('../model/blogimg_model')
-
+const SmuDB = require('../model/smu_model')
+const PreOderDB = require('../model/preOder_model')
+const newModelDB = require('../model/new_model')
 class CollectionsController {
 
     showBrand(req, res, next) {
@@ -21,26 +23,26 @@ class CollectionsController {
         
     }
     newModels(req, res, next) {
-        ProductDB.find({}).lean()
-        .then(product =>{ 
+        newModelDB.find({}).lean()
+        .then(newmodel =>{ 
             
-               res.render('newModel', {product})
+               res.render('newModel', {newmodel})
         })
         .catch(next)
     }
     preOrder(req, res, next) {
-        ProductDB.find({}).lean()
-        .then(product =>{ 
+        PreOderDB.find({}).lean()
+        .then(preoder =>{ 
             
-               res.render('preOrder', {product})
+               res.render('preOrder', {preoder})
         })
         .catch(next)
     }
     smu(req, res, next) {
-        ProductDB.find({}).lean()
-        .then(product =>{ 
+        SmuDB.find({}).lean()
+        .then(smu =>{ 
             
-               res.render('smu', {product})
+               res.render('smu', {smu})
         })
         .catch(next)
     }
@@ -55,16 +57,7 @@ class CollectionsController {
             .catch(next)
        
     }
-    cart(req, res, next) {
-       var sizeAndNum = req.query
-       
-        ProductDB.findById(req.params.id).lean()
-        .then(product =>{ 
-                
-            res.render('cart', {product,sizeAndNum})
-     })
-     .catch(next)
-    }
+   
 
     cartEmpty(req, res, next){
         res.render('cartEmpty')

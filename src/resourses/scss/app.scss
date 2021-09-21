@@ -583,11 +583,10 @@ body {
 }
 // ---------------- cart --------------------------------
 
-.cart_product_img{
-    width: 50%;
-}
+
 .cart_product_img img{
-    width: 100%;
+    width: 129px;
+    height:73px;
 }
 .homeback-btn{
     text-align: center !important   ;
@@ -655,7 +654,4 @@ body {
 // store 
 .addToCart-btn,.deleteFromFavorite-btn,.storeImg{
    margin-top: 8px;
-}
-.storeName{
-    
 }

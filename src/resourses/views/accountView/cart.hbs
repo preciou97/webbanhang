@@ -1,6 +1,6 @@
 <div class="mx-5">
     <div class="mt-200"></div>
- <div class="mt-200"></div>
+    <div class="mt-200"></div>
     {{!-- title --}}
     <div class="title">
         <div class="text-center">ショッピングカート</div>
@@ -26,41 +26,48 @@
                 合計
             </div>
         </div>
+        
+       
+        {{#each product}}
         <div class="row border-bottom py-3 align-items-center">
             <div class="col-9 col-sm-9 col-md-5 col-lg-5 col-xl-5 col-xxl-5">
-                <div class="d-flex flex-row">
+                <div class="d-flex flex-row align-items-center ">
                     <div class="cart_product_img">
-                        <img src="https://cdn.shopify.com/s/files/1/0265/8012/3707/products/{{product.img}}-r1_1080x.jpg?v=1631357973" alt="">
+                        <img src="https://cdn.shopify.com/s/files/1/0265/8012/3707/products/{{this.img}}-r1_1080x.jpg?v=1631357973"
+                            alt="">
                     </div>
                     <div class="cart_product_i  text-left">
                         <div class="cart_product_name">
-                            {{product.name}}
+                            {{this.name}}
                         </div>
                         <div class="cart_product_size  ">
                             <span class="">Size:</span>
-                            <span>{{sizeAndNum.size}}</span>
+                            <span class="sizeOfProduct">{{this.size}}</span>
                         </div>
                         <div class="cart_product_delete">
-                            <button class="btn btn-link">削除</button>
+                            <button data-id="{{this._id}}" data-size="{{this.size}}" data-num="{{this.num}}" class="btn btn-link deleteFromCartBtn" data-bs-toggle="modal" data-bs-target="#deleteModalOnCart">削除</button>
                         </div>
                     </div>
                 </div>
             </div>
             <div class="col-3 col-sm-3 col-md-3 col-lg-3 col-xl-3 col-xxl-3 text-center">
-                {{product.cost}}円
+                {{this.costNum}}円
             </div>
-            <div class="col-auto col-sm-auto col-md-2 col-lg-2 col-xl-2 col-xxl-2 text-center">
-                {{sizeAndNum.num}}
+            <div class="col-auto col-sm-auto col-md-2 col-lg-2 col-xl-2 col-xxl-2 text-center numOfProduct">
+                {{this.num}}
             </div>
-            <div class="col-auto col-sm-auto col-md-auto col-lg-2 col-xl-2 col-xxl-2 text-center">
-                {{multi product.cost sizeAndNum.num}}円
+            <div id="multiCost"  class="col-auto col-sm-auto col-md-auto col-lg-2 col-xl-2 col-xxl-2 text-center">
+                {{multi this.costNum this.num}}円
             </div>
         </div>
-        {{!-- <div class="cart_product_gift_and_note">
+        {{/each}}
+       
+        <div class="cart_product_gift_and_note">
             <div class="cart_product_gift">
                 <div class="form-check">
                     <form id="cart_product_gift_form" action="" method="get">
-                    <input class="form-check-input" type="checkbox" name="giftChecked" value="150" id="presentCheck">
+                        <input class="form-check-input" type="checkbox" name="giftChecked" value="150"
+                            id="presentCheck">
                     </form>
                     <label class="form-check-label" for="presentCheck">
                         梱包用段ボールを追加( ¥150 )
@@ -70,7 +77,7 @@
             <div class="cart_product_note">
                 1足用のダンボールになります。※2足以上はダンボール梱包無料になりますのでチェックは不要です。
             </div>
-        </div> --}}
+        </div>
         <div class="row">
             <div
                 class="col-12 col-sm-12 col-md-12 offset-lg-10 offset-xl-10 offset-xxl-10 col-lg-2 col-xl-2 col-xxl-2 text-center">
@@ -78,8 +85,9 @@
                     <div class="total">
                         小計
                     </div>
+                    
                     <div class="total_cost">
-                        {{multi product.cost sizeAndNum.num}}円
+                        {{totalCostObj.totalCost}}円
                     </div>
                 </div>
                 <span class="text-sm">税込価格。配送料は購入手続き時に計算されます。</span>
@@ -89,8 +97,8 @@
             <div class="transparent_date">
                 配送希望日
                 <div class="dropdown">
-                    <button class="btn btn-outline-dark dropdown-toggle transparent_date_btn" type="button" id="dropdownMenuButton1"
-                        data-bs-toggle="dropdown" aria-expanded="false">
+                    <button class="btn btn-outline-dark dropdown-toggle transparent_date_btn" type="button"
+                        id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
                         指定なし
                     </button>
                     <ul class="dropdown-menu  transparent_date_dropdown " aria-labelledby="dropdownMenuButton1">
@@ -104,8 +112,8 @@
             <div class="transparent_time">
                 配送時間帯
                 <div class="dropdown ">
-                    <button class="btn btn-outline-dark dropdown-toggle transparent_time_btn" type="button" id="dropdownMenuButton1"
-                        data-bs-toggle="dropdown" aria-expanded="false">
+                    <button class="btn btn-outline-dark dropdown-toggle transparent_time_btn" type="button"
+                        id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
                         指定なし
                     </button>
                     <ul class="dropdown-menu transparent_time_dropdown" aria-labelledby="dropdownMenuButton1">
@@ -121,9 +129,31 @@
             </div>
 
             <div class="ggPay">
-            <button class="btn btn-outline-dark btn-sm" type="button">PAY</button>
+                <button class="btn btn-outline-dark btn-sm" type="button">PAY</button>
             </div>
         </div>
     </div>
 
+</div>
+
+
+
+
+<!-- Modal -->
+<div class="modal fade" id="deleteModalOnCart" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Delete</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        本当に削除しますか？
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">いいえ</button>
+        <button type="button" class="btn btn-danger" id="modalDeleteOnCartBtn">はい</button>
+      </div>
+    </div>
+  </div>
 </div>

@@ -237,25 +237,27 @@
         <div class="all-item">
 
             <div class="row">
-                {{#each product}}
+                 {{#each smu}}
 
-                <div class="mt-4 col-6 col-sm-6 col-2-4">
+        <div class="mt-4 col-6 col-sm-6 col-2-4">
 
-                    <a class="product_detail_link" href="/collections/product/{{this._id}}">
-                        <div class="card" style="width: 100%;">
-                            <img src="https://cdn.shopify.com/s/files/1/0265/8012/3707/products/{{this.img}}-r1_1080x.jpg?v=1631357973"
-                                class="card-img-top" alt="...">
-                            <div class="card-body">
-                                <p class="card-text">{{this.name}}</p>
-                                <div>
-                                    <p>{{this.cost}}円 (税込)</p>
-                                </div>
-                                <button class="btn btn-light btn-custom">{{this.status}}</button>
-                            </div>
+            <a class="product_detail_link" href="/collections/product/{{this._id}}">
+                <div class="card" style="width: 100%;">
+                    <img src="https://cdn.shopify.com/s/files/1/0265/8012/3707/products/{{this.img}}-r1_1080x.jpg?v=1631357973"
+                        class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <p class="card-text">{{this.name}}</p>
+                        <div>
+                            <p>{{this.cost}}円(税込)</p>
                         </div>
-                    </a>
+                        <button class="btn btn-light    ">{{this.status}}</button>
+                        <a data-id="{{this._id}}" class="btn btn-outline-dark addFavorite">お気に入り</a>
+                        <div class="addSuccess">カートに入れました</div>
+                    </div>
                 </div>
-                {{/each}}
+            </a>
+        </div>
+        {{/each}}
             </div>
 
         </div>

@@ -9,6 +9,7 @@ const user = new Schema({
     password: String,
     img: String,
     item: Array,
+    cart: Array,
 })
 
 

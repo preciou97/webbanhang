@@ -1,7 +1,7 @@
 
-var SiteRouter = require('../routes/site')
-var CollectionsRouter = require('../routes/collections')
-var AccountRouter = require('../routes/account')
+var SiteRouter = require('./siteRoute')
+var CollectionsRouter = require('./collectionsRoute')
+var AccountRouter = require('./accountRoute')
 var PageInfoController = require('../app/controllers/PageInfoController')
 function router(app){
 

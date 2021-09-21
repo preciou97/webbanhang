@@ -4,7 +4,7 @@ var CollectionsController = require('../app/controllers/CollectionsController')
 
 
 router.get('/cart-empty',CollectionsController.cartEmpty)
-router.get('/cart/:id',CollectionsController.cart)
+
 router.get('/product/:id',CollectionsController.product)
 router.get('/blog', CollectionsController.blog)
 router.get('/new-models', CollectionsController.newModels)

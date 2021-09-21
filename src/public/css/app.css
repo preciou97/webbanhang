@@ -501,11 +501,9 @@ body {
   display: block;
   padding: 10px; }
 
-.cart_product_img {
-  width: 50%; }
-
 .cart_product_img img {
-  width: 100%; }
+  width: 129px;
+  height: 73px; }
 
 .homeback-btn {
   text-align: center !important; }
