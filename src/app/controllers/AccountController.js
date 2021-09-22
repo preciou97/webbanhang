@@ -154,12 +154,12 @@ class AccountController {
             })
             ProductDB.find({ _id: { $in: productIDs } }).lean()
                .then(products => {
-                  
+                 
                   let product = [];
-                  products.map((prod, index) => {
-                     product.push({ ...prod, ...productSizeAndNum[index] });
+                  productIDs.map((prod, index) => {
+                     product.push({...products[0], ...productSizeAndNum[index] });
                   })
-                  
+                  console.log(product);
                   var totalCost = (product.reduce((pre, curr) =>{
                      return pre + curr.num * curr.costNum;  
                   },0)); 
@@ -173,6 +173,7 @@ class AccountController {
             return res.json(err)
          })
    }
+
    addToCart(req, res, next) {
       
       var token = req.cookies.token;
@@ -185,6 +186,8 @@ class AccountController {
          })
          .catch(next)
    }
+
+   
    deleteFromCart(req, res, next){
       var token = req.cookies.token;
       var kq = jwt.verify(token, 'mk');
