@@ -10,7 +10,7 @@ const mongoose = require('mongoose');
 
 async function connect() {
   try {
-      await mongoose.connect('mongodb://localhost:27017/mita_shop', {
+      await mongoose.connect('mongodb+srv://preciou:preciou1@cluster0.0pj5b.mongodb.net/mita_shop', {
           useNewUrlParser: true,
       });
       console.log('connect success');
