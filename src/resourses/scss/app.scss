@@ -502,11 +502,12 @@ body {
 //  ----------- search page -----------
 
 .search_page {
-    margin: 20px 32%;
+    margin: 20px;
+    padding: 0px 20%;
 }
 .search_page_input {
     flex: 0 0 auto !important;
-    width: 30% !important;
+    width: 75% !important;
 }
 
 
