@@ -63,34 +63,38 @@ document.addEventListener('DOMContentLoaded',function(e) {
     
 
 productDetailBtn.click(function () {
-    $.ajax({
-        url: '/account/addToCart',
-        type: 'POST',
-        data: {
-            size: $('.addToCartSize option:selected').val(),
-            num: $('.addToCartNum').val(),
-            id: $('.addToCartId').val()
-        }
-    })
-        .then(response => {
-            if (response) {
-                var addCartFail = $('.addCartResp')
-                addCartFail.text(response)
-                addCartFail.hide();
-                addCartFail.css('color', 'red');
-                addCartFail.slideToggle(500);
-
-            }
-            if (response == 'OK') {
-
-                var addCartSuccess = $('.addCartResp')
-                addCartSuccess.text('カートに追加された')
-
-                addCartSuccess.css('color', 'black')
-
-                addCartSuccess.slideToggle(3500);
+    if(token != ""){
+        $.ajax({
+            url: '/account/addToCart',
+            type: 'POST',
+            data: {
+                size: $('.addToCartSize option:selected').val(),
+                num: $('.addToCartNum').val(),
+                id: $('.addToCartId').val()
             }
         })
+            .then(response => {
+                if (response) {
+                    var addCartFail = $('.addCartResp')
+                    addCartFail.text(response)
+                    addCartFail.hide();
+                    addCartFail.css('color', 'red');
+                    addCartFail.slideToggle(500);
+    
+                }
+                if (response == 'OK') {
+    
+                    var addCartSuccess = $('.addCartResp')
+                    addCartSuccess.text('カートに追加された')
+    
+                    addCartSuccess.css('color', 'black')
+    
+                    addCartSuccess.slideToggle(3500);
+                }
+            })
+    }else{
+        window.location.href = "/account/login"
+    }
 
 })
 $('#deleteModal').on('shown.bs.modal', function () {
