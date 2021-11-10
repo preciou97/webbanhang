@@ -1,3 +1,6 @@
+
+<div class="container-fluid">
+
 <div class="mx-5">
     <div class="mt-200"></div>
     <div class="mt-200"></div>
@@ -7,7 +10,7 @@
     </div>
 
     <div class="back_to_homepage text-center">
-        <a class="homeback-btn" href="/home">買い物を続ける</a>
+        <a class="homeback-btn" href="/">買い物を続ける</a>
 
     </div>
 
@@ -57,7 +60,7 @@
                 {{this.num}}
             </div>
             <div id="multiCost"  class="col-auto col-sm-auto col-md-auto col-lg-2 col-xl-2 col-xxl-2 text-center">
-                {{multi this.costNum this.num}}円
+                {{multi this.cost this.num}}円
             </div>
         </div>
         {{/each}}
@@ -79,9 +82,8 @@
             </div>
         </div>
         <div class="row">
-            <div
-                class="col-12 col-sm-12 col-md-12 offset-lg-10 offset-xl-10 offset-xxl-10 col-lg-2 col-xl-2 col-xxl-2 text-center">
-                <div class="d-flex flex-row justify-content-around">
+            <div class="col-3 col-sm-3 col-md-12 offset-lg-10 offset-xl-10 offset-xxl-10 col-lg-2 col-xl-2 col-xxl-2 text-center">
+                <div class="d-flex justify-content-end">
                     <div class="total">
                         小計
                     </div>
@@ -90,10 +92,10 @@
                         {{totalCostObj.totalCost}}円
                     </div>
                 </div>
-                <span class="text-sm">税込価格。配送料は購入手続き時に計算されます。</span>
+                
 
             </div>
-
+            <span class="text-sm">税込価格。配送料は購入手続き時に計算されます。</span>
             <div class="transparent_date">
                 配送希望日
                 <div class="dropdown">
@@ -156,4 +158,6 @@
       </div>
     </div>
   </div>
+</div>
+<div class="mt-200"></div>
 </div>

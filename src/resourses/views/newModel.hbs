@@ -32,7 +32,7 @@
             </div>
         </div>
         <div class="info_right">
-            2825個の商品
+            {{count}}個の商品
         </div>
     </div>
 
@@ -237,45 +237,34 @@
         <div class="all-item">
 
             <div class="row">
+
                 {{#each newmodel}}
+                
+                <div class="mt-4 col-6 col-sm-6 col-2-4">
 
-        <div class="mt-4 col-6 col-sm-6 col-2-4">
-
-            <a class="product_detail_link" href="/collections/product/{{this._id}}">
-                <div class="card" style="width: 100%;">
-                    <img src="https://cdn.shopify.com/s/files/1/0265/8012/3707/products/{{this.img}}-r1_1080x.jpg?v=1631357973"
-                        class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <p class="card-text">{{this.name}}</p>
-                        <div>
-                            <p>{{this.cost}}円(税込)</p>
+                    <a class="product_detail_link" href="/collections/product/{{this._id}}">
+                        <div class="card" style="width: 100%;">
+                            <img src="https://cdn.shopify.com/s/files/1/0265/8012/3707/products/{{this.img}}-r1_1080x.jpg?v=1631357973"
+                                class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <p class="card-text">{{this.name}}</p>
+                                <div>
+                                    <p>{{this.cost}}円(税込)</p>
+                                </div>
+                                <button class="btn btn-light    ">{{this.status}}</button>
+                                <a data-id="{{this._id}}" class="btn btn-outline-dark addFavorite">お気に入り</a>
+                                <div class="addSuccess">カートに入れました</div>
+                            </div>
                         </div>
-                        <button class="btn btn-light    ">{{this.status}}</button>
-                        <a data-id="{{this._id}}" class="btn btn-outline-dark addFavorite">お気に入り</a>
-                        <div class="addSuccess">カートに入れました</div>
-                    </div>
+                    </a>
                 </div>
-            </a>
-        </div>
-        {{/each}}
+                {{/each}}
             </div>
         </div>
 
         {{!-- PAGINATION --}}
         <nav aria-label="Page navigation ">
-            <ul class="pagination justify-content-center">
-                <li class="page-item">
-                    <a class="page-link" href="#" aria-label="Previous">
-                        <span aria-hidden="true">&laquo;</span>
-                    </a>
-                </li>
-                <li class="page-item"><a class="page-link" href="#">1</a></li>
-                <li class="page-item"><a class="page-link" href="#">2</a></li>
-                <li class="page-item"><a class="page-link" href="#">3</a></li>
-                <li class="page-item">
-                    <a class="page-link" href="#" aria-label="Next">
-                        <span aria-hidden="true">&raquo;</span>
-                    </a>
-                </li>
+            <ul class="pagination justify-content-center pagi_newmodel">
+
             </ul>
         </nav>

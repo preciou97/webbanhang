@@ -2,7 +2,7 @@ var express = require('express')
 var router = express.Router()
 var SiteController = require('../app/controllers/SiteController')
 
-router.get('/home', SiteController.index)
+router.get('/', SiteController.index)
 router.get('/search', SiteController.search)
 
 

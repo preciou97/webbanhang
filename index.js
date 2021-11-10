@@ -40,5 +40,5 @@ router(app)
 
 
 app.listen(port, () => {
-  console.log(`App listening at http://localhost:${port}/home`)
+  console.log(`App listening at http://localhost:${port}/`)
 })

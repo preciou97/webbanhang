@@ -50,7 +50,7 @@
             </h4>
 
             <p class="product_detail_code">
-                {{product.code}}
+                {{product.pd_code}}
             </p>
 
             <span class="product_detail_cost" >
@@ -70,11 +70,11 @@
             </div>
         
             <input value="{{product._id}}" class="addToCartId" style="display:none" >
-            <input type="number" required value="1" name="num" class="product_detail_quantity_input text-center addToCartNum" >
+            <input type="number" required value="1" min="1" max=""name="num" class="product_detail_quantity_input text-center addToCartNum" >
 
             
             <button type="submit" value="submit" form="product_form" class="btn btn-dark product_detail_btn ">カートに追加する</button>
-            <p style="display: none;"　class="addCartSuccess">カートに追加された</p>
+            <div class="addCartResp"></div>
             <div class="product_detail_attention text-center">
                 必ずお読みください <i class="fas fa-angle-down product_detail_attention_angle-down "></i>
                 <div class="product_detail_attention_detail">

@@ -23,26 +23,49 @@ class CollectionsController {
         
     }
     newModels(req, res, next) {
-        newModelDB.find({}).lean()
-        .then(newmodel =>{ 
+        let pageNum = req.params.slug;
+        let num = pageNum.slice(5)
+        let skipPage = (num-1)*30;
+        Promise.all([newModelDB.find({}).lean().limit(30).skip(skipPage),newModelDB.countDocuments({})])
+        
+        .then(([newmodel,count]) =>{ 
             
-               res.render('newModel', {newmodel})
+               res.render('newModel', {newmodel,count})
         })
         .catch(next)
     }
+
+    countDataOnNewModel(req, res, next){
+       newModelDB.countDocuments({})
+        .then(number =>{
+            res.json(Math.ceil(number/30));
+        })
+        
+    }
+    countDataOnSmu(req, res, next){
+        SmuDB.countDocuments({})
+         .then(number =>{
+             res.json(Math.ceil(number/30));
+         })
+         
+     }
     preOrder(req, res, next) {
-        PreOderDB.find({}).lean()
-        .then(preoder =>{ 
+        Promise.all([ PreOderDB.find({}).lean(),PreOderDB.countDocuments({})])
+       
+        .then(([preoder,count]) =>{ 
             
-               res.render('preOrder', {preoder})
+               res.render('preOrder', {preoder,count})
         })
         .catch(next)
     }
     smu(req, res, next) {
-        SmuDB.find({}).lean()
-        .then(smu =>{ 
+        let pageNum = req.params.slug;
+        let num = pageNum.slice(5)
+        let skipPage = (num-1)*30;
+        Promise.all([ SmuDB.find({}).lean().limit(30).skip(skipPage),SmuDB.countDocuments({})])
+        .then(([smu,count]) =>{ 
             
-               res.render('smu', {smu})
+               res.render('smu', {smu,count})
         })
         .catch(next)
     }

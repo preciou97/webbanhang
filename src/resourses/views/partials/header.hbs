@@ -7,18 +7,18 @@
 
 
         {{!-- header logo --}}
-        <div class="logo col-3 col-sm-3 col-md-2 col-lg-2  col-xl-2 col-xxl-2">
+        <div class="logo col-3 col-sm-3 col-md-2 col-lg-2  col-xl-1 col-xxl-2">
             <div class="nav-logo">
-                <a href="/home"><img src="/img/logo.gif" alt=""></a>
+                <a class="nav_img_link" href="/"><img class="nav_logo" src="/img/logo.gif" alt=""></a>
             </div>
         </div>
 
         {{!-- header menu list --}}
-        <div class="nav-list-menu col-12 col-sm-12 col-md-12 col-lg-6 col-xl-6 col-xxl-6">
+        <div class="nav-list-menu col-12 col-sm-12 col-md-12 col-lg-6 col-xl-7 col-xxl-6">
 
             <ul class="navbar-nav d-flex flex-row flex-wrap justify-content-center align-items-center">
                 <li class="nav-item">
-                    <a class="nav-link" href="/collections/new-models">NEW MODELS
+                    <a class="nav-link nav-pagi" data-url="get-data-count" href="/collections/new-models/page-1">NEW MODELS
                         <div>
                             新着商品
                         </div>
@@ -39,7 +39,7 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="/collections/smu">SMU
+                    <a class="nav-link nav-pagi"  data-url="get-data-count" href="/collections/smu/page-1">SMU
                         <div>
                             別注モデル
                         </div>
@@ -59,7 +59,7 @@
         <div class="nav_button col-2 col-sm-2 col-md-2 ml-2">
 
 
-            <a href="/home" class="nav_btn_link" onclick="">
+            <a href="/" class="nav_btn_link" onclick="">
                 <i class="fa fa-bars"></i>
             </a>
 
@@ -68,7 +68,7 @@
         </div>
 
         {{!-- header icon --}}
-        <div class="nav-icon col-7 col-sm-7 col-md-7 col-lg-4 col-xl-4 col-xxl-4">
+        <div class="nav-icon col-7 col-sm-7 col-md-3 col-xl-3 col-xxl-4">
             <ul class="nav-icon-ul d-flex justify-content-left text-tenter">
                 <li class="nav-icon-list search-btn-icon">
                     <a href="" class="nav-icon-link">

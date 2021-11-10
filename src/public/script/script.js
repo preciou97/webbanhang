@@ -14,6 +14,54 @@ const addFavorite = $(".addFavorite");
 const productDetailBtn = $(".product_detail_btn");
 var token = getCookie('token');
 
+document.addEventListener('DOMContentLoaded',function(e) {
+
+    $.getJSON(`/collections/new-models/${$('.nav-pagi').attr("data-url")}`)
+        .then(data => {
+            
+            $('.pagi_newmodel').html(function () {
+                var html = "";
+                for (var i = 0; i < data; i++) {
+                    html += `<li class="page-item"><a class="page-link newmodel-pagi-link" href="/collections/new-models/page-${i+1}" data-num="${i+1}">${i + 1}</a></li>`
+                }
+                return html;
+            })
+           
+          $('.newmodel-pagi-link').each(function(){
+              if($(this).attr('href') == window.location.pathname){
+                $(this).parent().addClass('active')
+              }else{
+                $(this).parent().removeClass('active')
+              }
+          })
+           
+        })
+        $.getJSON(`/collections/smu/${$('.nav-pagi').attr("data-url")}`)
+        .then(data => {
+            $('.pagi_smu').html(function () {
+                var html = "";
+                for (var i = 0; i < data; i++) {
+                    html += `<li class="page-item"><a class="page-link smu-pagi-link" href="/collections/smu/page-${i+1}" data-num="${i+1}">${i + 1}</a></li>`
+                }
+                return html;
+            })
+           
+          $('.smu-pagi-link').each(function(){
+              if($(this).attr('href') == window.location.pathname){
+                $(this).parent().addClass('active')
+              }else{
+                $(this).parent().removeClass('active')
+              }
+          })
+           
+        })
+    
+       
+})
+
+
+    
+
 productDetailBtn.click(function () {
     $.ajax({
         url: '/account/addToCart',
@@ -24,9 +72,26 @@ productDetailBtn.click(function () {
             id: $('.addToCartId').val()
         }
     })
-    var addCartSuccess = $('.addCartSuccess')
-    addCartSuccess.slideToggle(500);
-    addCartSuccess.slideToggle(1500);
+        .then(response => {
+            if (response) {
+                var addCartFail = $('.addCartResp')
+                addCartFail.text(response)
+                addCartFail.hide();
+                addCartFail.css('color', 'red');
+                addCartFail.slideToggle(500);
+
+            }
+            if (response == 'OK') {
+
+                var addCartSuccess = $('.addCartResp')
+                addCartSuccess.text('カートに追加された')
+
+                addCartSuccess.css('color', 'black')
+
+                addCartSuccess.slideToggle(3500);
+            }
+        })
+
 })
 $('#deleteModal').on('shown.bs.modal', function () {
 
@@ -124,6 +189,15 @@ addFavorite.click(function () {
 
 })
 
+$('#password_input').keypress(function (e) {
+    var key = e.which;
+    if (key == 13)  // the enter key code
+    {
+        loginButton.click();
+        return false;
+    }
+});
+
 loginButton.click(function () {
     $.ajax({
         url: "login/check",
@@ -188,8 +262,9 @@ navbarSearch.click(function (e) {
 })
 inputSearchBtn.click(function (e) {
     var searchForm = $('.search_form_hidden');
-    searchForm.attr('action', "/search")
+    searchForm.attr('action', "/search") 
     searchForm.submit();
+
 })
 
 searchPageBtn.click(function (e) {
@@ -219,6 +294,7 @@ productListImg.click(function (e) {
 
     productImg.attr("src", $(this).attr("src"));
 })
+
 $(searchInput).keypress(function (e) {
     var keycode = (e.keyCode ? e.keyCode : e.which);
     if (keycode == '13') {

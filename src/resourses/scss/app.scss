@@ -502,12 +502,11 @@ body {
 //  ----------- search page -----------
 
 .search_page {
-    margin: 20px;
-    padding: 0px 20%;
+    padding: 20px 32%;
 }
 .search_page_input {
     flex: 0 0 auto !important;
-    width: 75% !important;
+    width: 70% !important;
 }
 
 
@@ -549,7 +548,7 @@ body {
     font-size:16px;
 }
 .product_detail_cost{
-    font-size: 17px;
+    font-size: 24px;
     
 }
 .product_detail_form{
@@ -583,8 +582,13 @@ body {
 
 }
 // ---------------- cart --------------------------------
-
-
+.total{
+    margin-right: 30px;
+}
+.addCartSuccess{
+   display: none;
+   
+}
 .cart_product_img img{
     width: 129px;
     height:73px;

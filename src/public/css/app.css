@@ -440,13 +440,12 @@ body {
   cursor: pointer; }
 
 .search_page {
-   margin: 20px;
-   padding: 0px 20%;
-}
+  padding: 20px 32%; }
+
 .search_page_input {
-   flex: 0 0 auto !important;
-   width: 75% !important;
-}
+  flex: 0 0 auto !important;
+  width: 70% !important; }
+
 .product_image {
   width: 100%; }
 
@@ -475,7 +474,7 @@ body {
   font-size: 16px; }
 
 .product_detail_cost {
-  font-size: 17px; }
+  font-size: 24px; }
 
 .product_detail_form {
   margin: 20px 0;
@@ -501,6 +500,12 @@ body {
   margin: 20px 0;
   display: block;
   padding: 10px; }
+
+.total {
+  margin-right: 30px; }
+
+.addCartSuccess {
+  display: none; }
 
 .cart_product_img img {
   width: 129px;

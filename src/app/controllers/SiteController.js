@@ -13,7 +13,7 @@ class SiteController{
             BrandDB.find({}).lean(),
             SaleDB.find({}).lean().limit(10),
             PreOderDB.find({}).lean().limit(10),
-            SmuDB.find({}).lean().limit(10)
+            SmuDB.find({}).lean().limit(10),
         ])
        
             .then(([product,newmodel,brand,sale,preoder,smu]) =>  
@@ -26,16 +26,19 @@ class SiteController{
     
    search(req,res,next){
        var searchValue = req.query;
-      
-       ProductDB.find({name: { $regex: searchValue.v,$options: "i" }}).lean()
-            .then(product => {
+       Promise.all([ ProductDB.find({name: { $regex: searchValue.v,$options: "i" }}).lean(),ProductDB.find({name: { $regex: searchValue.v,$options: "i" }}).countDocuments({})])
+   
+            .then(([product,count]) => {
 
-                res.render('search', {product,
+                res.render('search', {
+                    product,
                     "searchValue": searchValue.v,
+                    count 
                 });
             })
     
-}
+    }
+    
 }
 
 module.exports = new SiteController()
