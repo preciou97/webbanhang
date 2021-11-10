@@ -5,7 +5,7 @@ var AccountController = require('../app/controllers/AccountController')
 
 /* -----------Cart -------------- */
 router.patch('/cart/delete',AccountController.deleteFromCart)
-router.post('/addToCart',AccountController.checkToken,AccountController.checkItemExistCart,AccountController.addToCart)
+router.post('/addToCart',AccountController.checkItemExistCart,AccountController.addToCart)
 router.get('/cart',AccountController.checkCartEmpty,AccountController.showCart)
 
 
@@ -14,7 +14,7 @@ router.get('/cart',AccountController.checkCartEmpty,AccountController.showCart)
 
 router.patch('/store/delete',AccountController.editItemStore)
 router.post('/store',AccountController.addItemStore)
-router.get('/store',AccountController.checkToken,AccountController.checkStoreEmpty,AccountController.showStore)
+router.get('/store',AccountController.checkStoreEmpty,AccountController.showStore)
 
 
 
