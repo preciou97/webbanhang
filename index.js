@@ -10,7 +10,7 @@ const mongoose = require('mongoose');
 
 async function connect() {
   try {
-      await mongoose.connect('mongodb+srv://preciou:preciou1@cluster0.0pj5b.mongodb.net/mita_shop', {
+      await mongoose.connect('mongodb+srv://preciou:preciou1@cluster0.0pj5b.mongodb.net/?retryWrites=true&w=majority', {
           useNewUrlParser: true,
       });
       console.log('connect success');
